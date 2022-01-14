@@ -1,4 +1,5 @@
 import * as React from "react";
+import "./ReplyForm.scss";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface IReplyFormProps {}

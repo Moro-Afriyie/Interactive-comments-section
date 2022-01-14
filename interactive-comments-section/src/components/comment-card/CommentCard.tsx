@@ -1,8 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
+import "./CommentCard.scss";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface ICommentCardProps {
-}
+interface ICommentCardProps {}
 
 const CommentCard: React.FunctionComponent<ICommentCardProps> = (props) => {
   return <h1>Comment Card</h1>;
