@@ -1,10 +1,15 @@
 import React from "react";
 import "./App.scss";
+import Comment from "./components/comment/Comment";
+import Modal from "./components/delete-modal/Modal";
+import SendForm from "./components/send-form/SendForm";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
+    <div className="container">
+      <Comment />
+      <SendForm />
+      <Modal />
     </div>
   );
 }
