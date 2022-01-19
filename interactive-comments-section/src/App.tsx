@@ -6,10 +6,11 @@ import SendForm from "./components/send-form/SendForm";
 
 function App() {
   return (
-    <div className="container">
-      <Comment />
+    <div>
+      {/* <Comment />
       <SendForm />
-      <Modal />
+      <Modal /> */}
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
     </div>
   );
 }
