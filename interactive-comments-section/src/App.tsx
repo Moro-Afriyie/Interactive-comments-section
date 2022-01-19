@@ -5,11 +5,10 @@ import SendForm from "./components/SendForm";
 
 function App() {
   return (
-    <div className="w-full h-full bg-moderateBlue font-rubik">
-      {/* <Comment />
+    <div className="h-screen bg-veryLightGray">
+      <Comment />
       <Modal />
-      <SendForm /> */}
-      <h1>Welcome to tailwind css</h1>
+      <SendForm />
     </div>
   );
 }
