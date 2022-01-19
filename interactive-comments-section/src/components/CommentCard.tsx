@@ -7,9 +7,9 @@ interface ICommentCardProps {}
 
 const CommentCard: React.FunctionComponent<ICommentCardProps> = (props) => {
   return (
-    <div>
+    <div className="flex flex-col gap-2">
       <Comment />
-      {/* <ReplyForm /> */}
+      <ReplyForm />
     </div>
   );
 };

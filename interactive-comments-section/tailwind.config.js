@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         rubik: "'Rubik', sans-serif",
       },
+      gridRow: {
+        form: "1fr 0.5fr",
+      },
     },
   },
   plugins: [],
