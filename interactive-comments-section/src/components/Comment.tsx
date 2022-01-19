@@ -31,7 +31,9 @@ const Comment: React.FunctionComponent<ICommentProps> = (props) => {
           {/*reply button on desktop**/}
           <div className="sm:flex sm:items-center hidden px-2 gap-1 cursor-pointer h-8 sm:ml-auto">
             <img src={reply} alt="reply sign" className="w-3 h-3" />
-            <p className="text-moderateBlue font-bold">Reply</p>
+            <p className="text-moderateBlue hover:text-lightGrayish font-bold">
+              Reply
+            </p>
           </div>
           {/*end reply button on desktop**/}
         </div>

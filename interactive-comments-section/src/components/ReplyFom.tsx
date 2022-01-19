@@ -22,7 +22,7 @@ const ReplyForm: React.FunctionComponent<IReplyFormProps> = (props) => {
       ></textarea>
       <button
         type="submit"
-        className="uppercase justify-self-end text-white bg-moderateBlue  py-1 w-24 h-10 rounded-md col-start-3 col-end-4"
+        className="uppercase justify-self-end text-white bg-moderateBlue  py-1 w-24 h-10 rounded-md col-start-3 col-end-4 hover:bg-lightGrayish"
       >
         Send
       </button>
