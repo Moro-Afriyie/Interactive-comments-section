@@ -9,7 +9,7 @@ interface ICommentProps {}
 
 const Comment: React.FunctionComponent<ICommentProps> = (props) => {
   return (
-    <div className="bg-white mx-3 shadow-sm p-3 grid gap-4 rounded-md sm:flex">
+    <div className="bg-white mx-3 shadow-sm p-3 grid gap-4 rounded-md sm:flex max-w-3xl">
       {/*Vote button on desktop**/}
       <div className="sm:flex hidden py-2 px-2 max-h-20 flex-row items-center gap-3 bg-veryLightGray rounded-md w-fit sm:flex-col">
         <img src={plus} alt="plus icon" className="cursor-pointer" />
@@ -17,17 +17,19 @@ const Comment: React.FunctionComponent<ICommentProps> = (props) => {
         <img src={minus} alt="minus icon" className="cursor-pointer" />
       </div>
       {/*end vote button on desktop**/}
-      <div className="info sm:flex flex-col gap-3">
+      <div className="flex flex-col gap-3">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full">
             <img src={amyRobson} alt="profile picture w-full h-full" />
           </div>
           <p className="text-darkBlue font-bold">armyrobson</p>
           <p className="text-grayishBlue">1 month ago</p>
+          {/*reply button on desktop**/}
           <div className="sm:flex sm:items-center hidden px-2 gap-1 cursor-pointer h-8 sm:ml-auto">
             <img src={reply} alt="reply sign" className="w-3 h-3" />
             <p className="text-moderateBlue font-bold">Reply</p>
           </div>
+          {/*end reply button on desktop**/}
         </div>
         <div className="sm:mb-2 sm:mr-2">
           <p className="text-grayishBlue">
