@@ -20,7 +20,11 @@ const Comment: React.FunctionComponent<ICommentProps> = (props) => {
       <div className="flex flex-col gap-3">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full">
-            <img src={amyRobson} alt="profile picture w-full h-full" />
+            <img
+              src={amyRobson}
+              alt="profile picture"
+              className="w-full h-full object-contain"
+            />
           </div>
           <p className="text-darkBlue font-bold">armyrobson</p>
           <p className="text-grayishBlue">1 month ago</p>

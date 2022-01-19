@@ -4,8 +4,12 @@ import SendForm from "./components/SendForm";
 
 function App() {
   return (
-    <div className="h-screen bg-veryLightGray">
+    <div className="min-h-screen bg-veryLightGray flex flex-col items-center gap-3 py-5">
       <CommentCard />
+      <CommentCard />
+      <CommentCard />
+      {/* <CommentCard />
+      <CommentCard /> */}
     </div>
   );
 }
