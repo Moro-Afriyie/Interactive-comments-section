@@ -1,5 +1,4 @@
 import * as React from "react";
-import "./UpdateForm.scss";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface IUpdateFormProps {}

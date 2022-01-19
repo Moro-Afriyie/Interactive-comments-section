@@ -1,18 +1,15 @@
 import React from "react";
+import Comment from "./components/Comment";
+import Modal from "./components/Modal";
+import SendForm from "./components/SendForm";
 // import "./App.scss";
-import Comment from "./components/comment/Comment";
-import Modal from "./components/delete-modal/Modal";
-import SendForm from "./components/send-form/SendForm";
 
 function App() {
   return (
     <div>
-      {/* <Comment />
+      <Comment />
+      <Modal />
       <SendForm />
-      <Modal /> */}
-      <h1 className="text-3xl font-bold underline text-green-900">
-        Hello world!
-      </h1>
     </div>
   );
 }
