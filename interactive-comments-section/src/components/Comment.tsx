@@ -22,7 +22,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
   };
 
   return (
-    <div className="bg-white  shadow-sm p-3 grid gap-4 rounded-md sm:flex max-w-3xl">
+    <div className="bg-white  shadow-sm p-3 grid gap-4 rounded-md sm:flex max-w-3xl font-rubik">
       {/*Vote button on desktop**/}
       <div className="sm:flex hidden py-2 px-2 max-h-20 flex-row items-center gap-3 bg-veryLightGray rounded-md w-fit sm:flex-col">
         <img src={plus} alt="plus icon" className="cursor-pointer" />
