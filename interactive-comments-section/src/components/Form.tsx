@@ -2,11 +2,11 @@ import * as React from "react";
 import amyRobson from "../assets/avatars/image-amyrobson.png";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface IReplyFormProps {
+interface IFormProps {
   formType: string;
 }
 
-const ReplyForm: React.FunctionComponent<IReplyFormProps> = ({ formType }) => {
+const Form: React.FunctionComponent<IFormProps> = ({ formType }) => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (formType === "reply") {
@@ -60,4 +60,4 @@ const ReplyForm: React.FunctionComponent<IReplyFormProps> = ({ formType }) => {
   );
 };
 
-export default ReplyForm;
+export default Form;

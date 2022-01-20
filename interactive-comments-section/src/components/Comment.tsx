@@ -5,7 +5,7 @@ import minus from "../assets/icon-minus.svg";
 import reply from "../assets/icon-reply.svg";
 import edit from "../assets/icon-edit.svg";
 import deleteIcon from "../assets/icon-delete.svg";
-import ReplyForm from "./ReplyFom";
+import Form from "./Form";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface ICommentProps {
@@ -79,7 +79,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
             Ipsam quod exercitationem sunt eligendi at veritatis perferendis
             commodi est minima quaerat!
           </p> */}
-          <ReplyForm formType="update" />
+          <Form formType="update" />
         </div>
       </div>
       <div className="flex items-center sm:hidden">
