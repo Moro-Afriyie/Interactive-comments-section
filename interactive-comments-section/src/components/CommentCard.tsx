@@ -9,7 +9,9 @@ const CommentCard: React.FunctionComponent<ICommentCardProps> = (props) => {
   return (
     <div className="flex flex-col gap-2 px-3">
       <Comment />
-      <ReplyForm />
+      <ReplyForm type="reply" />
+      <ReplyForm type="update" />
+      <ReplyForm type="send" />
     </div>
   );
 };
