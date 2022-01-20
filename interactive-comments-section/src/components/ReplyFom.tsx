@@ -13,7 +13,7 @@ const ReplyForm: React.FunctionComponent<IReplyFormProps> = ({ type }) => {
       console.log("reply");
     } else if (type === "update") {
       console.log("update");
-    } else if (type === "send") {
+    } else {
       console.log("send");
     }
   };
