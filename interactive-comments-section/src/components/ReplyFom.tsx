@@ -3,15 +3,15 @@ import amyRobson from "../assets/avatars/image-amyrobson.png";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface IReplyFormProps {
-  type: string;
+  formType: string;
 }
 
-const ReplyForm: React.FunctionComponent<IReplyFormProps> = ({ type }) => {
+const ReplyForm: React.FunctionComponent<IReplyFormProps> = ({ formType }) => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    if (type === "reply") {
+    if (formType === "reply") {
       console.log("reply");
-    } else if (type === "update") {
+    } else if (formType === "update") {
       console.log("update");
     } else {
       console.log("send");
@@ -40,7 +40,7 @@ const ReplyForm: React.FunctionComponent<IReplyFormProps> = ({ type }) => {
         type="submit"
         className="uppercase justify-self-end text-white bg-moderateBlue  py-1 w-24 h-10 rounded-md col-start-3 col-end-4 hover:bg-lightGrayish"
       >
-        {type}
+        {formType}
       </button>
     </form>
   );

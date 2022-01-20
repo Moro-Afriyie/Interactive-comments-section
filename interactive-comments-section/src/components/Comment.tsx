@@ -5,9 +5,20 @@ import minus from "../assets/icon-minus.svg";
 import reply from "../assets/icon-reply.svg";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface ICommentProps {}
+interface ICommentProps {
+  setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
+  setFormType: React.Dispatch<React.SetStateAction<string>>;
+}
 
-const Comment: React.FunctionComponent<ICommentProps> = (props) => {
+const Comment: React.FunctionComponent<ICommentProps> = ({
+  setShowForm,
+  setFormType,
+}) => {
+  const handleFormDisplay = (showForm: boolean, formType: string) => {
+    setShowForm(showForm);
+    setFormType(formType);
+  };
+
   return (
     <div className="bg-white  shadow-sm p-3 grid gap-4 rounded-md sm:flex max-w-3xl">
       {/*Vote button on desktop**/}
@@ -29,7 +40,10 @@ const Comment: React.FunctionComponent<ICommentProps> = (props) => {
           <p className="text-darkBlue font-bold">armyrobson</p>
           <p className="text-grayishBlue">1 month ago</p>
           {/*reply button on desktop**/}
-          <div className="sm:flex sm:items-center hidden px-2 gap-1 cursor-pointer h-8 sm:ml-auto">
+          <div
+            className="sm:flex sm:items-center hidden px-2 gap-1 cursor-pointer h-8 sm:ml-auto"
+            onClick={() => handleFormDisplay(true, "reply")}
+          >
             <img src={reply} alt="reply sign" className="w-3 h-3" />
             <p className="text-moderateBlue hover:text-lightGrayish font-bold">
               Reply
