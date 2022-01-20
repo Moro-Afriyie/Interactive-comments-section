@@ -66,7 +66,10 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
           <p className="text-moderateBlue text-sm font-bold">12</p>
           <img src={minus} alt="minus icon" className="cursor-pointer" />
         </div>
-        <div className="ml-auto flex gap-2 items-center cursor-pointer">
+        <div
+          className="ml-auto flex gap-2 items-center cursor-pointer"
+          onClick={() => handleFormDisplay(true, "reply")}
+        >
           <img src={reply} alt="reply sign" className="w-3 h-3" />
           <p className="text-moderateBlue font-bold">Reply</p>
         </div>
