@@ -4,8 +4,8 @@ import Form from "./components/Form";
 
 function App() {
   return (
-    <div className="min-h-screen bg-veryLightGray flex flex-col items-center gap-3 py-5">
-      <main className="max-w-3xl">
+    <main className="min-h-screen bg-veryLightGray flex flex-col items-center gap-3 py-5">
+      <div className="max-w-3xl">
         <div className="max-w-3xl">
           <CommentCard />
           <div className="py-3">
@@ -15,9 +15,11 @@ function App() {
             </div>
           </div>
         </div>
-        <Form formType="send" />
-      </main>
-    </div>
+        <div className="px-3">
+          <Form formType="send" />
+        </div>
+      </div>
+    </main>
   );
 }
 

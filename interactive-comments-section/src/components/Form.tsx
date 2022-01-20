@@ -23,7 +23,7 @@ const Form: React.FunctionComponent<IFormProps> = ({ formType }) => {
       className={
         formType === "update"
           ? "bg-white flex flex-col  flex-1 p-3 gap-4 rounded-md  w-full"
-          : "bg-white grid grid-cols-3 grid-rows-form mx-3 shadow-sm p-3 gap-4 rounded-md sm:flex w-full"
+          : "bg-white grid grid-cols-3 grid-rows-form  shadow-sm  p-3 gap-4 rounded-md sm:flex "
       }
       onSubmit={handleSubmit}
     >
