@@ -5,6 +5,7 @@ import minus from "../assets/icon-minus.svg";
 import reply from "../assets/icon-reply.svg";
 import edit from "../assets/icon-edit.svg";
 import deleteIcon from "../assets/icon-delete.svg";
+import ReplyForm from "./ReplyFom";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface ICommentProps {
@@ -30,7 +31,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
         <img src={minus} alt="minus icon" className="cursor-pointer" />
       </div>
       {/*end vote button on desktop**/}
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 flex-1">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full">
             <img
@@ -47,7 +48,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
 
           <p className="text-grayishBlue">1 month ago</p>
           {/*reply button on desktop**/}
-          <div
+          {/* <div
             className="sm:flex sm:items-center hidden px-2 gap-1 cursor-pointer h-8 sm:ml-auto"
             onClick={() => handleFormDisplay(true, "reply")}
           >
@@ -55,11 +56,11 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
             <p className="text-moderateBlue hover:text-lightGrayish font-bold">
               Reply
             </p>
-          </div>
+          </div> */}
           {/*end reply button on desktop**/}
 
           {/*edit and delete button on desktop**/}
-          {/* <div className="sm:flex sm:items-center hidden px-2 gap-8 cursor-pointer h-8 sm:ml-auto">
+          <div className="sm:flex sm:items-center hidden px-2 gap-8 cursor-pointer h-8 sm:ml-auto">
             <div className=" delete flex gap-1 flex-1 items-center">
               <img src={deleteIcon} alt="delete icon" className="w-3 h-3 " />
               <p className="text-softRed">Delete</p>
@@ -68,30 +69,17 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
               <img src={edit} alt="edit icon" className="w-3 h-3 " />
               <p className="text-moderateBlue">Edit</p>
             </div>
-          </div> */}
+          </div>
           {/*end edit and delete button on desktop**/}
         </div>
         <div className="sm:mb-2 sm:mr-2">
-          <p className="text-grayishBlue">
+          {/* <p className="text-grayishBlue">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi
             aliquam repellendus id quaerat dolorem voluptatum et corrupti eius!
             Ipsam quod exercitationem sunt eligendi at veritatis perferendis
             commodi est minima quaerat!
-          </p>
-          {/* <form className="bg-white flex flex-col  flex-1 shadow-sm p-3 gap-4 rounded-md  w-3xl">
-            <textarea
-              className="h-20 sm:h-24 p-2 border  border-lightGrayish rounded-md  focus:border-grayishBlue focus:outline-none"
-              name="comment"
-              id="comment"
-              placeholder="Add a comment..."
-            ></textarea>
-            <button
-              type="submit"
-              className="uppercase self-end text-white bg-moderateBlue  py-1 w-24 h-10 rounded-md hover:bg-lightGrayish"
-            >
-              update
-            </button>
-          </form> */}
+          </p> */}
+          <ReplyForm formType="update" />
         </div>
       </div>
       <div className="flex items-center sm:hidden">
