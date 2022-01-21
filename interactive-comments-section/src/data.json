@@ -6,7 +6,7 @@
     "comments": [
       {
         "Id": 1,
-        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
+        "mainComment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
         "replies": []
       }
     ],
@@ -20,7 +20,7 @@
     "comments": [
       {
         "Id": 1,
-        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
+        "mainComment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
         "replies": [
           {
             "Id": 1,
