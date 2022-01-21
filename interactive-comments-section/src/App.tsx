@@ -1,8 +1,13 @@
 import React from "react";
 import CommentCard from "./components/CommentCard";
 import Form from "./components/Form";
+import data from "./data.json";
+import { commentCard } from "./interfaces/interface";
 
 function App() {
+  const user: commentCard[] = data;
+  console.log({ user });
+
   return (
     <main className="min-h-screen bg-veryLightGray flex justify-center gap-3 py-5">
       <div className="max-w-3xl w-full">
