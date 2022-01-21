@@ -1,7 +1,7 @@
 import React from "react";
 import CommentCard from "./components/CommentCard";
 import Form from "./components/Form";
-import data from "./data.json";
+import { data } from "./data";
 import Comment from "./interfaces/interface";
 
 function App() {

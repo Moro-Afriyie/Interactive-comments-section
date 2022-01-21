@@ -13,13 +13,29 @@ interface ICommentCardProps {
   votes: number;
 }
 
-const CommentCard: React.FunctionComponent<ICommentCardProps> = (props) => {
+const CommentCard: React.FunctionComponent<ICommentCardProps> = ({
+  id,
+  userName,
+  avatar,
+  comment,
+  date,
+  votes,
+}) => {
   const [showForm, setShowForm] = useState(false);
   const [formType, setFormType] = useState("");
 
   return (
     <div className="flex flex-col gap-2 px-3">
-      <Comment setShowForm={setShowForm} setFormType={setFormType} />
+      <Comment
+        setShowForm={setShowForm}
+        setFormType={setFormType}
+        id={id}
+        userName={userName}
+        avatar={avatar}
+        date={date}
+        votes={votes}
+        comment={comment}
+      />
       {showForm && formType === "reply" && <Form formType={formType} />}
     </div>
   );

@@ -11,11 +11,23 @@ import Form from "./Form";
 interface ICommentProps {
   setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
   setFormType: React.Dispatch<React.SetStateAction<string>>;
+  id: number;
+  userName: string;
+  avatar: string;
+  comment: string;
+  date: string;
+  votes: number;
 }
 
 const Comment: React.FunctionComponent<ICommentProps> = ({
   setShowForm,
   setFormType,
+  id,
+  userName,
+  avatar,
+  comment,
+  date,
+  votes,
 }) => {
   const handleFormDisplay = (showForm: boolean, formType: string) => {
     setShowForm(showForm);
@@ -27,7 +39,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
       {/*Vote button on desktop**/}
       <div className="sm:flex hidden py-2 px-2 max-h-20 flex-row items-center gap-3 bg-veryLightGray rounded-md w-fit sm:flex-col">
         <img src={plus} alt="plus icon" className="cursor-pointer" />
-        <p className="text-moderateBlue text-sm font-bold">12</p>
+        <p className="text-moderateBlue text-sm font-bold">{votes}</p>
         <img src={minus} alt="minus icon" className="cursor-pointer" />
       </div>
       {/*end vote button on desktop**/}
@@ -35,12 +47,12 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
         <div className="flex items-center gap-3 flex-wrap">
           <div className="w-10 h-10 rounded-full">
             <img
-              src={amyRobson}
+              src={avatar}
               alt="profile picture"
               className="w-full h-full object-contain"
             />
           </div>
-          <p className="text-darkBlue font-bold">armyrobson</p>
+          <p className="text-darkBlue font-bold lowercase">{userName}</p>
 
           <p className="bg-moderateBlue text-white font-medium  rounded-sm text-sm px-2">
             you
@@ -73,12 +85,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
           {/*end edit and delete button on desktop**/}
         </div>
         <div className="sm:mb-2 sm:mr-2">
-          <p className="text-grayishBlue">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-            obcaecati ipsum repellendus nam non possimus, distinctio vero iure
-            sunt et quae dolorem, error harum similique nihil neque consequatur
-            culpa expedita?
-          </p>
+          <p className="text-grayishBlue">{comment}</p>
           {/* <Form formType="update" /> */}
         </div>
       </div>
