@@ -7,6 +7,8 @@ import edit from "../assets/icon-edit.svg";
 import deleteIcon from "../assets/icon-delete.svg";
 import Form from "./Form";
 import Modal from "./Modal";
+import juliusomo from "../assets/avatars/image-juliusomo.png";
+import { CurrentUser } from "../interfaces/interface";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface ICommentProps {
@@ -35,6 +37,13 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
     setFormType(formType);
   };
 
+  const [showUpdateForm, setShowUpdateForm] = React.useState(false);
+
+  const currentUser: CurrentUser = {
+    userName: "juliusomo",
+    avatar: juliusomo,
+  };
+
   return (
     <div>
       <div className="bg-white  shadow-sm p-3 grid gap-4 rounded-md sm:flex w-full font-rubik">
@@ -56,39 +65,50 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
             </div>
             <p className="text-darkBlue font-bold lowercase">{userName}</p>
 
-            <p className="bg-moderateBlue text-white font-medium  rounded-sm text-sm px-2">
-              you
-            </p>
+            {currentUser.userName === userName && (
+              <p className="bg-moderateBlue text-white font-medium  rounded-sm text-sm px-2">
+                you
+              </p>
+            )}
 
             <p className="text-grayishBlue">1 month ago</p>
-            {/*reply button on desktop**/}
-            <div
-              className="sm:flex sm:items-center hidden px-2 gap-1 cursor-pointer h-8 sm:ml-auto"
-              onClick={() => handleFormDisplay(true, "reply")}
-            >
-              <img src={reply} alt="reply sign" className="w-3 h-3" />
-              <p className="text-moderateBlue hover:text-lightGrayish font-bold">
-                Reply
-              </p>
-            </div>
-            {/*end reply button on desktop**/}
-
-            {/*edit and delete button on desktop**/}
-            {/* <div className="sm:flex  hidden items-center  px-2 gap-8 cursor-pointer h-8 sm:ml-auto">
-            <div className=" delete flex gap-1 flex-1 items-center">
-              <img src={deleteIcon} alt="delete icon" className="w-3 h-3 " />
-              <p className="text-softRed">Delete</p>
-            </div>
-            <div className="edit flex gap-1 flex-1 items-center">
-              <img src={edit} alt="edit icon" className="w-3 h-3 " />
-              <p className="text-moderateBlue">Edit</p>
-            </div>
-          </div> */}
-            {/*end edit and delete button on desktop**/}
+            {/**Reply , edit and delete buttons for desktop*/}
+            {currentUser.userName === userName ? (
+              <div className="sm:flex  hidden items-center  px-2 gap-8 cursor-pointer h-8 sm:ml-auto">
+                <div className=" delete flex gap-1 flex-1 items-center">
+                  <img
+                    src={deleteIcon}
+                    alt="delete icon"
+                    className="w-3 h-3 "
+                  />
+                  <p className="text-softRed">Delete</p>
+                </div>
+                <div
+                  className="edit flex gap-1 flex-1 items-center"
+                  onClick={() => setShowUpdateForm(true)}
+                >
+                  <img src={edit} alt="edit icon" className="w-3 h-3 " />
+                  <p className="text-moderateBlue">Edit</p>
+                </div>
+              </div>
+            ) : (
+              <div
+                className="sm:flex sm:items-center hidden px-2 gap-1 cursor-pointer h-8 sm:ml-auto"
+                onClick={() => handleFormDisplay(true, "reply")}
+              >
+                <img src={reply} alt="reply sign" className="w-3 h-3" />
+                <p className="text-moderateBlue hover:text-lightGrayish font-bold">
+                  Reply
+                </p>
+              </div>
+            )}
           </div>
           <div className="sm:mb-2 sm:mr-2">
-            <p className="text-grayishBlue">{comment}</p>
-            {/* <Form formType="update" /> */}
+            {showUpdateForm ? (
+              showUpdateForm && <Form formType="update" comment={comment} />
+            ) : (
+              <p className="text-grayishBlue">{comment}</p>
+            )}
           </div>
         </div>
         <div className="flex items-center sm:hidden">
@@ -97,24 +117,30 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
             <p className="text-moderateBlue text-sm font-bold">12</p>
             <img src={minus} alt="minus icon" className="cursor-pointer" />
           </div>
-          <div
-            className="ml-auto flex gap-2 items-center cursor-pointer"
-            onClick={() => handleFormDisplay(true, "reply")}
-          >
-            <img src={reply} alt="reply sign" className="w-3 h-3" />
-            <p className="text-moderateBlue font-bold">Reply</p>
-          </div>
-          {/* 
-        <div className="flex items-center  px-2 gap-4 cursor-pointer h-8 ml-auto">
-          <div className=" delete flex gap-1 flex-1 items-center">
-            <img src={deleteIcon} alt="delete icon" className="w-3 h-3 " />
-            <p className="text-softRed">Delete</p>
-          </div>
-          <div className="edit flex gap-1 flex-1 items-center">
-            <img src={edit} alt="edit icon" className="w-3 h-3 " />
-            <p className="text-moderateBlue">Edit</p>
-          </div>
-        </div> */}
+          {/**Reply , edit and delete buttons for mobile */}
+          {currentUser.userName === userName ? (
+            <div className="flex items-center  px-2 gap-4 cursor-pointer h-8 ml-auto">
+              <div className=" delete flex gap-1 flex-1 items-center">
+                <img src={deleteIcon} alt="delete icon" className="w-3 h-3 " />
+                <p className="text-softRed">Delete</p>
+              </div>
+              <div
+                className="edit flex gap-1 flex-1 items-center"
+                onClick={() => setShowUpdateForm(true)}
+              >
+                <img src={edit} alt="edit icon" className="w-3 h-3 " />
+                <p className="text-moderateBlue">Edit</p>
+              </div>
+            </div>
+          ) : (
+            <div
+              className="ml-auto flex gap-2 items-center cursor-pointer"
+              onClick={() => handleFormDisplay(true, "reply")}
+            >
+              <img src={reply} alt="reply sign" className="w-3 h-3" />
+              <p className="text-moderateBlue font-bold">Reply</p>
+            </div>
+          )}
         </div>
       </div>
       {/* <Modal /> */}

@@ -18,6 +18,6 @@ export interface Comment {
 }
 
 export interface CurrentUser {
-  userId: string;
+  userName: string;
   avatar: string;
 }

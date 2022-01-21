@@ -8,11 +8,16 @@ interface IFormProps {
   formType: string;
   commentId?: string;
   currentUser?: CurrentUser;
+  comment?: string;
 }
 
-const Form: React.FunctionComponent<IFormProps> = ({ formType, commentId }) => {
+const Form: React.FunctionComponent<IFormProps> = ({
+  formType,
+  commentId,
+  comment,
+}) => {
   const currentUser: CurrentUser = {
-    userId: "3",
+    userName: "juliusomo",
     avatar: juliusomo,
   };
 
@@ -54,6 +59,7 @@ const Form: React.FunctionComponent<IFormProps> = ({ formType, commentId }) => {
         name="comment"
         id="comment"
         placeholder="Add a comment..."
+        value={comment || undefined}
       ></textarea>
       <button
         type="submit"
