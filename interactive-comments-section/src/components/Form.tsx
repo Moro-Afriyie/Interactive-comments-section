@@ -1,12 +1,21 @@
 import * as React from "react";
 import amyRobson from "../assets/avatars/image-amyrobson.png";
+import juliusomo from "../assets/avatars/image-juliusomo.png";
+import { CurrentUser } from "../interfaces/interface";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface IFormProps {
   formType: string;
+  commentId?: string;
+  currentUser?: CurrentUser;
 }
 
-const Form: React.FunctionComponent<IFormProps> = ({ formType }) => {
+const Form: React.FunctionComponent<IFormProps> = ({ formType, commentId }) => {
+  const currentUser: CurrentUser = {
+    userId: "3",
+    avatar: juliusomo,
+  };
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (formType === "reply") {
@@ -30,7 +39,7 @@ const Form: React.FunctionComponent<IFormProps> = ({ formType }) => {
       {formType !== "update" && (
         <div className="w-10 h-10 rounded-full row-start-2 row-end-3 col-start-1 col-end-2">
           <img
-            src={amyRobson}
+            src={currentUser.avatar}
             alt="profile picture"
             className="w-full h-full object-contain"
           />

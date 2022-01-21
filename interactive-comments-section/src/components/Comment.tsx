@@ -117,7 +117,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
         </div> */}
         </div>
       </div>
-      <Modal />
+      {/* <Modal /> */}
     </div>
   );
 };

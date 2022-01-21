@@ -1,4 +1,4 @@
-import Comment from "../interfaces/interface";
+import { Comment } from "../interfaces/interface";
 import amyrobson from "../assets/avatars/image-amyrobson.png";
 import juliusomo from "../assets/avatars/image-juliusomo.png";
 import maxblagun from "../assets/avatars/image-maxblagun.png";

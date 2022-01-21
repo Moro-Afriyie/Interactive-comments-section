@@ -2,12 +2,15 @@ import React from "react";
 import CommentCard from "./components/CommentCard";
 import Form from "./components/Form";
 import { data } from "./models/data";
-import Comment from "./interfaces/interface";
-import Modal from "./components/Modal";
+import { Comment, CurrentUser } from "./interfaces/interface";
+import juliusomo from "./assets/avatars/image-juliusomo.png";
 
 function App() {
   const user: Comment[] = data;
-  const currentUser = 3;
+  // const currentUser: CurrentUser = {
+  //   userId: "3",
+  //   avatar: juliusomo,
+  // };
 
   return (
     <main className="min-h-screen relative items-center bg-veryLightGray flex justify-center pt-3 pb-5">
