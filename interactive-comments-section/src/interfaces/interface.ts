@@ -7,7 +7,7 @@ export interface replyCommentInterface {
   votes: number;
 }
 
-export interface commentCard {
+export default interface Comment {
   commentId: number;
   userName: string;
   avatar: string;

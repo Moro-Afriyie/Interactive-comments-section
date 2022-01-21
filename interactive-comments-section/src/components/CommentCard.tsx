@@ -4,7 +4,14 @@ import Comment from "./Comment";
 import Form from "./Form";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface ICommentCardProps {}
+interface ICommentCardProps {
+  id: number;
+  userName: string;
+  avatar: string;
+  comment: string;
+  date: string;
+  votes: number;
+}
 
 const CommentCard: React.FunctionComponent<ICommentCardProps> = (props) => {
   const [showForm, setShowForm] = useState(false);
