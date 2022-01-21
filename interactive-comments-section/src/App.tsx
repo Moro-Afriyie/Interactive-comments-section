@@ -1,12 +1,12 @@
 import React from "react";
 import CommentCard from "./components/CommentCard";
 import Form from "./components/Form";
-import { data } from "./data";
+import { data } from "./models/data";
 import Comment from "./interfaces/interface";
 
 function App() {
   const user: Comment[] = data;
-  console.log({ user });
+  const currentUser = 3;
 
   return (
     <main className="min-h-screen bg-veryLightGray flex justify-center  py-5">

@@ -1,8 +1,8 @@
-import Comment from "./interfaces/interface";
-import amyrobson from "./assets/avatars/image-amyrobson.png";
-import juliusomo from "./assets/avatars/image-juliusomo.png";
-import maxblagun from "./assets/avatars/image-maxblagun.png";
-import ramsesmiron from "./assets/avatars/image-ramsesmiron.png";
+import Comment from "../interfaces/interface";
+import amyrobson from "../assets/avatars/image-amyrobson.png";
+import juliusomo from "../assets/avatars/image-juliusomo.png";
+import maxblagun from "../assets/avatars/image-maxblagun.png";
+import ramsesmiron from "../assets/avatars/image-ramsesmiron.png";
 
 export const data: Comment[] = [
   {
@@ -38,10 +38,10 @@ export const data: Comment[] = [
         reply:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
         date: "",
-        votes: 6,
+        votes: 2,
       },
     ],
     date: "",
-    votes: 12,
+    votes: 5,
   },
 ];
