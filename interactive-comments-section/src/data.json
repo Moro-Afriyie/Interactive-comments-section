@@ -1,0 +1,57 @@
+[
+  {
+    "Id": 1,
+    "userName": "armyrobson",
+    "avatar": "https://github.com/Moro-Afriyie/Interactive-comments-section/blob/main/interactive-comments-section/src/assets/avatars/image-amyrobson.png",
+    "comments": [
+      {
+        "Id": 1,
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
+        "replies": []
+      }
+    ],
+    "date": "",
+    "votes": 12
+  },
+  {
+    "Id": 2,
+    "userName": "maxblagun",
+    "avatar": "https://github.com/Moro-Afriyie/Interactive-comments-section/blob/main/interactive-comments-section/src/assets/avatars/image-maxblagun.png",
+    "comments": [
+      {
+        "Id": 1,
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
+        "replies": [
+          {
+            "Id": 1,
+            "userName": "armyrobson",
+            "avatar": "https://github.com/Moro-Afriyie/Interactive-comments-section/blob/main/interactive-comments-section/src/assets/avatars/image-amyrobson.png",
+            "reply": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
+            "date": "",
+            "votes": 4
+          },
+          {
+            "Id": 2,
+            "userName": "juliusomo",
+            "avatar": "https://github.com/Moro-Afriyie/Interactive-comments-section/blob/main/interactive-comments-section/src/assets/avatars/image-juliusomo.png",
+            "reply": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
+            "date": "",
+            "votes": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "userName": "juliusomo",
+    "avatar": "https://github.com/Moro-Afriyie/Interactive-comments-section/blob/main/interactive-comments-section/src/assets/avatars/image-juliusomo.png",
+    "comments": []
+  },
+  {
+    "Id": 4,
+    "userName": "ramsesmiron",
+    "avatar": "https://github.com/Moro-Afriyie/Interactive-comments-section/blob/main/interactive-comments-section/src/assets/avatars/image-ramsesmiron.png",
+    "comments": []
+  }
+]

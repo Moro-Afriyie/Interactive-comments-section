@@ -23,7 +23,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
   };
 
   return (
-    <div className="bg-white  shadow-sm p-3 grid gap-4 rounded-md sm:flex max-w-3xl font-rubik">
+    <div className="bg-white  shadow-sm p-3 grid gap-4 rounded-md sm:flex w-full font-rubik">
       {/*Vote button on desktop**/}
       <div className="sm:flex hidden py-2 px-2 max-h-20 flex-row items-center gap-3 bg-veryLightGray rounded-md w-fit sm:flex-col">
         <img src={plus} alt="plus icon" className="cursor-pointer" />
@@ -32,7 +32,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
       </div>
       {/*end vote button on desktop**/}
       <div className="flex flex-col gap-3 flex-1">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap">
           <div className="w-10 h-10 rounded-full">
             <img
               src={amyRobson}
@@ -60,7 +60,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
           {/*end reply button on desktop**/}
 
           {/*edit and delete button on desktop**/}
-          {/* <div className="sm:flex sm:items-center hidden px-2 gap-8 cursor-pointer h-8 sm:ml-auto">
+          {/* <div className="sm:flex  hidden items-center  px-2 gap-8 cursor-pointer h-8 sm:ml-auto">
             <div className=" delete flex gap-1 flex-1 items-center">
               <img src={deleteIcon} alt="delete icon" className="w-3 h-3 " />
               <p className="text-softRed">Delete</p>
@@ -74,10 +74,10 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
         </div>
         <div className="sm:mb-2 sm:mr-2">
           <p className="text-grayishBlue">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi
-            aliquam repellendus id quaerat dolorem voluptatum et corrupti eius!
-            Ipsam quod exercitationem sunt eligendi at veritatis perferendis
-            commodi est minima quaerat!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            obcaecati ipsum repellendus nam non possimus, distinctio vero iure
+            sunt et quae dolorem, error harum similique nihil neque consequatur
+            culpa expedita?
           </p>
           {/* <Form formType="update" /> */}
         </div>
@@ -95,6 +95,17 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
           <img src={reply} alt="reply sign" className="w-3 h-3" />
           <p className="text-moderateBlue font-bold">Reply</p>
         </div>
+        {/* 
+        <div className="flex items-center  px-2 gap-4 cursor-pointer h-8 ml-auto">
+          <div className=" delete flex gap-1 flex-1 items-center">
+            <img src={deleteIcon} alt="delete icon" className="w-3 h-3 " />
+            <p className="text-softRed">Delete</p>
+          </div>
+          <div className="edit flex gap-1 flex-1 items-center">
+            <img src={edit} alt="edit icon" className="w-3 h-3 " />
+            <p className="text-moderateBlue">Edit</p>
+          </div>
+        </div> */}
       </div>
     </div>
   );
