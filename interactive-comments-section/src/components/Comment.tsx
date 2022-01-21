@@ -38,6 +38,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
   };
 
   const [showUpdateForm, setShowUpdateForm] = React.useState(false);
+  const [showDeleteModal, setShowDeleteModal] = React.useState(false);
 
   const currentUser: CurrentUser = {
     userName: "juliusomo",
@@ -75,7 +76,10 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
             {/**Reply , edit and delete buttons for desktop*/}
             {currentUser.userName === userName ? (
               <div className="sm:flex  hidden items-center  px-2 gap-8 cursor-pointer h-8 sm:ml-auto">
-                <div className=" delete flex gap-1 flex-1 items-center">
+                <div
+                  className=" delete flex gap-1 flex-1 items-center"
+                  onClick={() => setShowDeleteModal(true)}
+                >
                   <img
                     src={deleteIcon}
                     alt="delete icon"
@@ -120,7 +124,10 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
           {/**Reply , edit and delete buttons for mobile */}
           {currentUser.userName === userName ? (
             <div className="flex items-center  px-2 gap-4 cursor-pointer h-8 ml-auto">
-              <div className=" delete flex gap-1 flex-1 items-center">
+              <div
+                className=" delete flex gap-1 flex-1 items-center"
+                onClick={() => setShowDeleteModal(true)}
+              >
                 <img src={deleteIcon} alt="delete icon" className="w-3 h-3 " />
                 <p className="text-softRed">Delete</p>
               </div>
@@ -143,7 +150,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
           )}
         </div>
       </div>
-      {/* <Modal /> */}
+      {showDeleteModal && <Modal setShowDeleteModal={setShowDeleteModal} />}
     </div>
   );
 };
