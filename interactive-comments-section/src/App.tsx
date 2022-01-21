@@ -3,13 +3,14 @@ import CommentCard from "./components/CommentCard";
 import Form from "./components/Form";
 import { data } from "./models/data";
 import Comment from "./interfaces/interface";
+import Modal from "./components/Modal";
 
 function App() {
   const user: Comment[] = data;
   const currentUser = 3;
 
   return (
-    <main className="min-h-screen items-center bg-veryLightGray flex justify-center  pt-3 pb-5">
+    <main className="min-h-screen relative items-center bg-veryLightGray flex justify-center pt-3 pb-5">
       <div className="max-w-3xl w-full">
         {user.map((comment) => (
           <div className="w-full py-2" key={comment.commentId}>
