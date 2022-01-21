@@ -9,7 +9,7 @@ function App() {
   const currentUser = 3;
 
   return (
-    <main className="min-h-screen items-center bg-veryLightGray flex justify-center  py-5">
+    <main className="min-h-screen items-center bg-veryLightGray flex justify-center  pt-3 pb-5">
       <div className="max-w-3xl w-full">
         {user.map((comment) => (
           <div className="w-full py-2" key={comment.commentId}>
