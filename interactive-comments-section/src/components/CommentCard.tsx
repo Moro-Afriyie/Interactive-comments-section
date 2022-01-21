@@ -36,7 +36,9 @@ const CommentCard: React.FunctionComponent<ICommentCardProps> = ({
         votes={votes}
         comment={comment}
       />
-      {showForm && formType === "reply" && <Form formType={formType} />}
+      {showForm && formType === "reply" && (
+        <Form formType={formType} comment={`@${userName}`} />
+      )}
     </div>
   );
 };

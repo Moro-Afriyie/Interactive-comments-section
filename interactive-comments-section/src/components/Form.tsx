@@ -53,8 +53,8 @@ const Form: React.FunctionComponent<IFormProps> = ({
       <textarea
         className={
           formType === "update"
-            ? "h-20 sm:h-24 p-2 border  border-lightGrayish rounded-md  focus:border-grayishBlue focus:outline-none"
-            : "row-start-1 row-end-2 col-start-1 col-end-4 flex-1 h-20 sm:h-24 p-2 border  border-lightGrayish rounded-md  focus:border-grayishBlue focus:outline-none"
+            ? "h-20 sm:h-24 p-2 border  border-lightGrayish text-grayishBlue rounded-md  focus:border-grayishBlue focus:outline-none"
+            : "row-start-1 row-end-2 col-start-1  text-grayishBlue col-end-4 flex-1 h-20 sm:h-24 p-2 border  border-lightGrayish rounded-md  focus:border-grayishBlue focus:outline-none"
         }
         name="comment"
         id="comment"
