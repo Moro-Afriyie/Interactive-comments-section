@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import Comment from "./Comment";
 import Form from "./Form";
 
@@ -23,6 +24,10 @@ const CommentCard: React.FunctionComponent<ICommentCardProps> = ({
 }) => {
   const [showForm, setShowForm] = useState(false);
   const [formType, setFormType] = useState("");
+
+  // const showForms = useSelector(
+  //   (state: { showForm: boolean }) => state.showForm
+  // );
 
   return (
     <div className="flex flex-col gap-2 px-3">
