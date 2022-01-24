@@ -18,6 +18,9 @@ module.exports = {
       gridRow: {
         form: "1fr 0.5fr",
       },
+      minHeight: {
+        "1/2": "calc(100vh - 2rem)",
+      },
     },
   },
   plugins: [],

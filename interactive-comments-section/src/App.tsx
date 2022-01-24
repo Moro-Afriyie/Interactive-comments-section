@@ -1,21 +1,20 @@
 import React from "react";
 import CommentCard from "./components/CommentCard";
 import Form from "./components/Form";
-import { data } from "./models/data";
 import { Comment } from "./interfaces/interface";
 import { useSelector } from "react-redux";
 import { IRootReducerState } from "./store/reducers/rootReducer";
 
 function App() {
   const comments: Comment[] = useSelector(
-    (state: IRootReducerState) => state.comments
+    (state: IRootReducerState) => state.comments.comments
   );
 
   return (
-    <main className="min-h-screen relative items-center bg-veryLightGray flex justify-center pt-3 pb-5">
-      <div className="max-w-3xl w-full">
+    <main className="min-h-screen relative items-center bg-veryLightGray flex justify-center pt-3 pb-5 ">
+      <div className="max-w-3xl min-h-1/2 w-full flex flex-col">
         {comments.map((comment) => (
-          <div className="w-full py-2" key={comment.commentId}>
+          <div className="w-full py-2 flex-grow" key={comment.commentId}>
             <CommentCard
               id={comment.commentId}
               userName={comment.userName}
@@ -43,7 +42,7 @@ function App() {
             )}
           </div>
         ))}
-        <div className="px-3">
+        <div className="px-3 mt-auto">
           <Form formType="send" />
         </div>
       </div>
