@@ -1,5 +1,4 @@
 import * as React from "react";
-import amyRobson from "../assets/avatars/image-amyrobson.png";
 import plus from "../assets/icon-plus.svg";
 import minus from "../assets/icon-minus.svg";
 import reply from "../assets/icon-reply.svg";
@@ -7,8 +6,6 @@ import edit from "../assets/icon-edit.svg";
 import deleteIcon from "../assets/icon-delete.svg";
 import Form from "./Form";
 import Modal from "./Modal";
-import juliusomo from "../assets/avatars/image-juliusomo.png";
-import { CurrentUser } from "../interfaces/interface";
 import { useSelector } from "react-redux";
 import { IRootReducerState } from "../store/reducers/rootReducer";
 
