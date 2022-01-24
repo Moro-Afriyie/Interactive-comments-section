@@ -7,10 +7,6 @@ import juliusomo from "./assets/avatars/image-juliusomo.png";
 
 function App() {
   const user: Comment[] = data;
-  // const currentUser: CurrentUser = {
-  //   userId: "3",
-  //   avatar: juliusomo,
-  // };
 
   return (
     <main className="min-h-screen relative items-center bg-veryLightGray flex justify-center pt-3 pb-5">

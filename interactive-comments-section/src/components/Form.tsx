@@ -1,7 +1,9 @@
 import * as React from "react";
+import { useSelector } from "react-redux";
 import amyRobson from "../assets/avatars/image-amyrobson.png";
 import juliusomo from "../assets/avatars/image-juliusomo.png";
 import { CurrentUser } from "../interfaces/interface";
+import { IRootReducerState } from "../store/reducers/rootReducer";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface IFormProps {
@@ -16,10 +18,9 @@ const Form: React.FunctionComponent<IFormProps> = ({
   commentId,
   comment,
 }) => {
-  const currentUser: CurrentUser = {
-    userName: "juliusomo",
-    avatar: juliusomo,
-  };
+  const currentUser = useSelector(
+    (state: IRootReducerState) => state.currentUser
+  );
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
