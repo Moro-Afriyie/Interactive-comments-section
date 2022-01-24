@@ -11,6 +11,7 @@ type Action = {
   type: typeof SET_CURRENT_USER;
   payload: CurrentUser;
 };
+
 export const currentUserReducer = (state = initialState, action: Action) => {
   switch (action.type) {
     case SET_CURRENT_USER:
