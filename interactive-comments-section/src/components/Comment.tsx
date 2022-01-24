@@ -154,6 +154,3 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
 };
 
 export default Comment;
-function IRootState(state: any, IRootState: any) {
-  throw new Error("Function not implemented.");
-}
