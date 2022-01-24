@@ -1,6 +1,6 @@
 import { CurrentUser } from "./../../interfaces/interface";
 import { SET_CURRENT_USER } from "../actionTypes/currentUserType";
-import juliusomo from "../../../assets/avatars/image-juliusomo.png";
+import juliusomo from "../../assets/avatars/image-juliusomo.png";
 
 const initialState: CurrentUser | null = {
   userName: "juliusomo",

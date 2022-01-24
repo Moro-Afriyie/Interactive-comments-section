@@ -10,7 +10,7 @@ import Modal from "./Modal";
 import juliusomo from "../assets/avatars/image-juliusomo.png";
 import { CurrentUser } from "../interfaces/interface";
 import { useSelector } from "react-redux";
-import { IRootState } from "../store/reducers/rootReducer";
+import { IRootReducerState } from "../store/reducers/rootReducer";
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface ICommentProps {
   setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
@@ -41,7 +41,7 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
   const [showUpdateForm, setShowUpdateForm] = React.useState(false);
   const [showDeleteModal, setShowDeleteModal] = React.useState(false);
 
-  const user = useSelector((state: IRootState) => state.currentUser);
+  const user = useSelector((state: IRootReducerState) => state.currentUser);
   console.log({ user });
 
   const currentUser: CurrentUser = {
