@@ -2,8 +2,7 @@ import React from "react";
 import CommentCard from "./components/CommentCard";
 import Form from "./components/Form";
 import { data } from "./models/data";
-import { Comment, CurrentUser } from "./interfaces/interface";
-import juliusomo from "./assets/avatars/image-juliusomo.png";
+import { Comment } from "./interfaces/interface";
 
 function App() {
   const user: Comment[] = data;
