@@ -1,9 +1,7 @@
 import { GET_ALL_COMMENTS } from "../actionTypes/commentType";
 import { data } from "./../../models/data";
 
-const initialState = {
-  comments: data,
-};
+const initialState = data;
 
 type Action = {
   type: typeof GET_ALL_COMMENTS;
