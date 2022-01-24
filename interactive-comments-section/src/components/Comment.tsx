@@ -9,7 +9,8 @@ import Form from "./Form";
 import Modal from "./Modal";
 import juliusomo from "../assets/avatars/image-juliusomo.png";
 import { CurrentUser } from "../interfaces/interface";
-
+import { useSelector } from "react-redux";
+import { IRootState } from "../store/reducers/rootReducer";
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface ICommentProps {
   setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
@@ -39,6 +40,9 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
 
   const [showUpdateForm, setShowUpdateForm] = React.useState(false);
   const [showDeleteModal, setShowDeleteModal] = React.useState(false);
+
+  const user = useSelector((state: IRootState) => state.currentUser);
+  console.log({ user });
 
   const currentUser: CurrentUser = {
     userName: "juliusomo",
@@ -156,3 +160,6 @@ const Comment: React.FunctionComponent<ICommentProps> = ({
 };
 
 export default Comment;
+function IRootState(state: any, IRootState: any) {
+  throw new Error("Function not implemented.");
+}
