@@ -10,7 +10,7 @@ type Action = {
   payload: Comment[];
 };
 
-const commentsReducer = (state = initialState, action: Action) => {
+export const commentsReducer = (state = initialState, action: Action) => {
   switch (action.type) {
     case GET_ALL_COMMENTS:
       return {
