@@ -12,9 +12,9 @@ function App() {
 
   return (
     <main className="min-h-screen relative items-center bg-veryLightGray flex justify-center pt-3 pb-5 ">
-      <div className="max-w-3xl min-h-1/2 w-full flex flex-col">
+      <div className="max-w-3xl min-h-1/2 w-full flex justify-center flex-col">
         {comments.map((comment) => (
-          <div className="w-full py-2 flex-grow" key={comment.commentId}>
+          <div className="w-full py-2 " key={comment.commentId}>
             <CommentCard
               id={comment.commentId}
               userName={comment.userName}
@@ -44,7 +44,7 @@ function App() {
             )}
           </div>
         ))}
-        <div className="px-3 mt-auto">
+        <div className="px-3">
           <Form formType="send" tag="main" />
         </div>
       </div>
