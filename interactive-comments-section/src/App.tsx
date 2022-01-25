@@ -45,7 +45,7 @@ function App() {
           </div>
         ))}
         <div className="px-3 mt-auto">
-          <Form formType="send" />
+          <Form formType="send" tag="main" />
         </div>
       </div>
     </main>

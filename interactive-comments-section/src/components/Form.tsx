@@ -32,7 +32,19 @@ const Form: React.FunctionComponent<IFormProps> = ({
       console.log("reply");
     } else if (formType === "update") {
       console.log("update");
+      console.log({
+        formType: formType,
+        commentId: commentId,
+        tag: tag,
+        comment: comment,
+      });
     } else {
+      console.log({
+        formType: formType,
+        commentId: commentId,
+        tag: tag,
+        comment: comment,
+      });
       console.log("send");
     }
   };
