@@ -9,6 +9,7 @@ export const data: Comment[] = [
     commentId: 1,
     userName: "armyrobson",
     avatar: amyrobson,
+    tag: "main",
     mainComment:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
     replies: [],
@@ -19,11 +20,13 @@ export const data: Comment[] = [
     commentId: 2,
     userName: "maxblagun",
     avatar: maxblagun,
+    tag: "main",
     mainComment:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
     replies: [
       {
         Id: 1,
+        tag: "reply",
         userName: "ramsesmiron",
         avatar: ramsesmiron,
         reply:
@@ -35,6 +38,7 @@ export const data: Comment[] = [
         Id: 2,
         userName: "juliusomo",
         avatar: juliusomo,
+        tag: "reply",
         reply:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
         date: "",
