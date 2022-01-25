@@ -31,7 +31,7 @@ export const data: Comment[] = [
         userName: "ramsesmiron",
         avatar: ramsesmiron,
         reply:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
+          "@maxblagun Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
         date: "",
         votes: 4,
       },
@@ -42,7 +42,7 @@ export const data: Comment[] = [
         avatar: juliusomo,
         tag: "reply",
         reply:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
+          "@ramsesmiron Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
         date: "",
         votes: 2,
       },
