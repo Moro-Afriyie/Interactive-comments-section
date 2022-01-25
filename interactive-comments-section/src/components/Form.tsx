@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { IRootReducerState } from "../store/reducers/rootReducer";
 
@@ -20,6 +21,8 @@ const Form: React.FunctionComponent<IFormProps> = ({
     (state: IRootReducerState) => state.currentUser
   );
 
+  const [formComment, setFormComment] = useState(comment);
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (formType === "reply") {
@@ -27,7 +30,7 @@ const Form: React.FunctionComponent<IFormProps> = ({
         formType: formType,
         commentId: commentId,
         tag: tag,
-        comment: comment,
+        comment: formComment,
       });
       console.log("reply");
     } else if (formType === "update") {
@@ -36,14 +39,14 @@ const Form: React.FunctionComponent<IFormProps> = ({
         formType: formType,
         commentId: commentId,
         tag: tag,
-        comment: comment,
+        comment: formComment,
       });
     } else {
       console.log({
         formType: formType,
         commentId: commentId,
         tag: tag,
-        comment: comment,
+        comment: formComment,
       });
       console.log("send");
     }
@@ -76,7 +79,8 @@ const Form: React.FunctionComponent<IFormProps> = ({
         name="comment"
         id="comment"
         placeholder="Add a comment..."
-        value={comment || undefined}
+        value={formComment || undefined}
+        onChange={(e) => setFormComment(e.target.value)}
       ></textarea>
       <button
         type="submit"
