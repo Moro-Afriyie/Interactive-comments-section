@@ -118,7 +118,16 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
                   />
                 )
               ) : (
-                <p className="text-grayishBlue">{comment}</p>
+                <p className="text-grayishBlue">
+                  <span className="text-moderateBlue font-bold">
+                    {comment.match(/^@\w+/gm) !== null
+                      ? comment.match(/^@\w+/gm)?.[0]
+                      : ""}
+                  </span>
+                  {comment.match(/^@\w+/gm)
+                    ? comment.replace(/^@\w+/gm, "")
+                    : comment}
+                </p>
               )}
             </div>
           </div>
