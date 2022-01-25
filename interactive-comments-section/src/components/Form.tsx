@@ -1,21 +1,19 @@
 import * as React from "react";
 import { useSelector } from "react-redux";
-import amyRobson from "../assets/avatars/image-amyrobson.png";
-import juliusomo from "../assets/avatars/image-juliusomo.png";
-import { CurrentUser } from "../interfaces/interface";
 import { IRootReducerState } from "../store/reducers/rootReducer";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface IFormProps {
   formType: string;
-  commentId?: string;
-  currentUser?: CurrentUser;
+  commentId?: number;
   comment?: string;
+  tag?: string;
 }
 
 const Form: React.FunctionComponent<IFormProps> = ({
   formType,
   commentId,
+  tag,
   comment,
 }) => {
   const currentUser = useSelector(

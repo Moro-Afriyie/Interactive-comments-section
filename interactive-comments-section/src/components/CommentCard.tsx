@@ -23,6 +23,7 @@ interface ICommentProps {
 const CommentCard: React.FunctionComponent<ICommentProps> = ({
   id,
   userName,
+  tag,
   avatar,
   comment,
   date,
@@ -107,7 +108,14 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
             </div>
             <div className="sm:mb-2 sm:mr-2">
               {showUpdateForm ? (
-                showUpdateForm && <Form formType="update" comment={comment} />
+                showUpdateForm && (
+                  <Form
+                    formType="update"
+                    tag={tag}
+                    commentId={id}
+                    comment={comment}
+                  />
+                )
               ) : (
                 <p className="text-grayishBlue">{comment}</p>
               )}
@@ -155,7 +163,12 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
         {showDeleteModal && <Modal setShowDeleteModal={setShowDeleteModal} />}
       </div>
       {showForm && formType === "reply" && (
-        <Form formType={formType} comment={`@${userName}`} />
+        <Form
+          formType={formType}
+          comment={`@${userName}`}
+          tag="reply"
+          commentId={id}
+        />
       )}
     </div>
   );
