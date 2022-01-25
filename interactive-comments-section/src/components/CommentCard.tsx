@@ -18,6 +18,7 @@ interface ICommentProps {
   comment: string;
   date: string;
   votes: number;
+  replyCommentId?: string;
 }
 
 const CommentCard: React.FunctionComponent<ICommentProps> = ({

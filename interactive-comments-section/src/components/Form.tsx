@@ -23,6 +23,12 @@ const Form: React.FunctionComponent<IFormProps> = ({
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (formType === "reply") {
+      console.log({
+        formType: formType,
+        commentId: commentId,
+        tag: tag,
+        comment: comment,
+      });
       console.log("reply");
     } else if (formType === "update") {
       console.log("update");

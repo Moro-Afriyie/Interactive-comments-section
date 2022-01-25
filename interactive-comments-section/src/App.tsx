@@ -29,8 +29,8 @@ function App() {
                 <div className="cards-container ml-4 pl-1 sm:ml-9 sm:pl-4 border-l border-lightGrayish flex flex-col gap-3">
                   {comment.replies.map((reply) => (
                     <CommentCard
-                      key={reply.Id}
-                      id={reply.Id}
+                      key={reply.replyCommentId}
+                      id={reply.replyCommentId}
                       userName={reply.userName}
                       tag={reply.tag}
                       avatar={reply.avatar}

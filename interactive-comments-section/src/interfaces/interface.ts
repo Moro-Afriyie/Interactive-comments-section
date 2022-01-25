@@ -1,5 +1,6 @@
 export interface replyCommentInterface {
-  Id: number;
+  mainCommentId: number;
+  replyCommentId: number;
   userName: string;
   avatar: string;
   tag: string;

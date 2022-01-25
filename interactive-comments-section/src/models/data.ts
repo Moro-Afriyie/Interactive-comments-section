@@ -25,7 +25,8 @@ export const data: Comment[] = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
     replies: [
       {
-        Id: 1,
+        mainCommentId: 2,
+        replyCommentId: 1,
         tag: "reply",
         userName: "ramsesmiron",
         avatar: ramsesmiron,
@@ -35,7 +36,8 @@ export const data: Comment[] = [
         votes: 4,
       },
       {
-        Id: 2,
+        mainCommentId: 2,
+        replyCommentId: 2,
         userName: "juliusomo",
         avatar: juliusomo,
         tag: "reply",
