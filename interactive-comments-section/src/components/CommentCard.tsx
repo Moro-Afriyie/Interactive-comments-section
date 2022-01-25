@@ -13,6 +13,7 @@ import { useState } from "react";
 interface ICommentProps {
   id: number;
   userName: string;
+  tag: string;
   avatar: string;
   comment: string;
   date: string;

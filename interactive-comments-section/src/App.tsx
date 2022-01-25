@@ -18,6 +18,7 @@ function App() {
             <CommentCard
               id={comment.commentId}
               userName={comment.userName}
+              tag={comment.tag}
               avatar={comment.avatar}
               comment={comment.mainComment}
               date={comment.date}
@@ -31,6 +32,7 @@ function App() {
                       key={reply.Id}
                       id={reply.Id}
                       userName={reply.userName}
+                      tag={reply.tag}
                       avatar={reply.avatar}
                       comment={reply.reply}
                       date={reply.date}
