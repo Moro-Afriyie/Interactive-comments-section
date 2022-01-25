@@ -11,24 +11,25 @@ import { IRootReducerState } from "../store/reducers/rootReducer";
 import { useState } from "react";
 
 interface ICommentProps {
-  id: number;
+  mainCommentId: number;
   userName: string;
   tag: string;
   avatar: string;
   comment: string;
   date: string;
   votes: number;
-  replyCommentId?: string;
+  replyCommentId?: number;
 }
 
 const CommentCard: React.FunctionComponent<ICommentProps> = ({
-  id,
+  mainCommentId,
   userName,
   tag,
   avatar,
   comment,
   date,
   votes,
+  replyCommentId,
 }) => {
   const [showUpdateForm, setShowUpdateForm] = React.useState(false);
   const [showDeleteModal, setShowDeleteModal] = React.useState(false);
@@ -108,14 +109,23 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
           </div>
           <div className="sm:mb-2 sm:mr-2">
             {showUpdateForm ? (
-              showUpdateForm && (
+              showUpdateForm &&
+              (tag === "reply" ? (
                 <Form
                   formType="update"
                   tag={tag}
-                  commentId={id}
+                  mainCommentId={mainCommentId}
+                  replyCommentId={replyCommentId}
                   comment={comment}
                 />
-              )
+              ) : (
+                <Form
+                  formType="update"
+                  tag={tag}
+                  mainCommentId={mainCommentId}
+                  comment={comment}
+                />
+              ))
             ) : (
               <p className="text-grayishBlue">
                 <span className="text-moderateBlue font-medium">
@@ -170,7 +180,7 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
           formType={formType}
           comment={`@${userName}`}
           tag="reply"
-          commentId={id}
+          mainCommentId={mainCommentId}
         />
       )}
       {showDeleteModal && <Modal setShowDeleteModal={setShowDeleteModal} />}

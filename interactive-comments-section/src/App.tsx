@@ -12,11 +12,11 @@ function App() {
 
   return (
     <main className="min-h-screen relative items-center bg-veryLightGray flex justify-center pt-3 pb-5 ">
-      <div className="max-w-3xl min-h-1/2 w-full flex justify-center flex-col">
+      <div className="max-w-3xl min-h-1/2 w-full flex justify-center flex-col gap-5">
         {comments.map((comment) => (
-          <div className="w-full py-2 " key={comment.commentId}>
+          <div className="w-full" key={comment.commentId}>
             <CommentCard
-              id={comment.commentId}
+              mainCommentId={comment.commentId}
               userName={comment.userName}
               tag={comment.tag}
               avatar={comment.avatar}
@@ -25,12 +25,13 @@ function App() {
               votes={comment.votes}
             />
             {comment.replies.length > 0 && (
-              <div className="py-3">
+              <div className="pt-3">
                 <div className="cards-container ml-4 pl-1 sm:ml-9 sm:pl-4 border-l border-lightGrayish flex flex-col gap-3">
                   {comment.replies.map((reply) => (
                     <CommentCard
                       key={reply.replyCommentId}
-                      id={reply.replyCommentId}
+                      mainCommentId={reply.mainCommentId}
+                      replyCommentId={reply.replyCommentId}
                       userName={reply.userName}
                       tag={reply.tag}
                       avatar={reply.avatar}

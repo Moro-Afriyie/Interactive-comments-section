@@ -1,19 +1,22 @@
 import * as React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { Comment, replyCommentInterface } from "../interfaces/interface";
 import { IRootReducerState } from "../store/reducers/rootReducer";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface IFormProps {
   formType: string;
-  commentId?: number;
+  mainCommentId?: number;
+  replyCommentId?: number;
   comment?: string;
-  tag?: string;
+  tag: string;
 }
 
 const Form: React.FunctionComponent<IFormProps> = ({
   formType,
-  commentId,
+  mainCommentId,
+  replyCommentId,
   tag,
   comment,
 }) => {
@@ -26,27 +29,51 @@ const Form: React.FunctionComponent<IFormProps> = ({
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (formType === "reply") {
-      console.log({
-        formType: formType,
-        commentId: commentId,
+      const reply = {
+        mainCommentId: mainCommentId,
+        replyCommentId: 4, // give it a new replyId
+        userName: currentUser.userName,
+        avatar: currentUser.avatar,
         tag: tag,
-        comment: formComment,
+        reply: formComment,
+        date: "",
+        votes: 0,
+      };
+      console.log({
+        reply,
       });
-      console.log("reply");
     } else if (formType === "update") {
+      // only need the commentId, tag and the updated comment value
       console.log("update");
-      console.log({
-        formType: formType,
-        commentId: commentId,
-        tag: tag,
-        comment: formComment,
-      });
+      if (tag === "reply") {
+        console.log({
+          maincommentId: mainCommentId,
+          replyCommentId: replyCommentId,
+          tag: tag,
+          comment: formComment,
+          date: "",
+        });
+      } else {
+        console.log({
+          maincommentId: mainCommentId,
+          tag: tag,
+          comment: formComment,
+          date: "",
+        });
+      }
     } else {
-      console.log({
-        formType: formType,
-        commentId: commentId,
+      const newComment = {
+        commentId: 3,
         tag: tag,
-        comment: formComment,
+        userName: currentUser.userName,
+        avatar: currentUser.avatar,
+        mainComment: formComment,
+        replies: [],
+        date: "",
+        votes: 0,
+      };
+      console.log({
+        newComment,
       });
       console.log("send");
     }
