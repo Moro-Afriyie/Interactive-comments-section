@@ -1,3 +1,5 @@
+import { replyCommentInterface } from "./../../interfaces/interface";
+import { ADD_NEW_COMMENT, UPDATE_COMMENT } from "./../actionTypes/commentType";
 import { Comment } from "../../interfaces/interface";
 import { GET_ALL_COMMENTS } from "../actionTypes/commentType";
 import { data } from "./../../models/data";
@@ -15,10 +17,13 @@ const initialState: IGetComments = {
   error: false,
 };
 
-type Action = {
-  type: typeof GET_ALL_COMMENTS;
-  payload: Comment[];
-};
+type Action =
+  | {
+      type: typeof GET_ALL_COMMENTS;
+      payload: Comment[];
+    }
+  | { type: typeof ADD_NEW_COMMENT; payload: Comment | replyCommentInterface }
+  | { type: typeof UPDATE_COMMENT; payload: Comment | replyCommentInterface };
 
 export const commentsReducer = (state = initialState, action: Action) => {
   switch (action.type) {
@@ -26,6 +31,16 @@ export const commentsReducer = (state = initialState, action: Action) => {
       return {
         ...state,
         comments: action.payload,
+      };
+    case ADD_NEW_COMMENT:
+      return {
+        ...state,
+        comments: [],
+      };
+    case UPDATE_COMMENT:
+      return {
+        ...state,
+        comments: [],
       };
     default:
       return state;
