@@ -183,7 +183,7 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
       {showForm && formType === "reply" && (
         <Form
           formType={formType}
-          comment={`@${userName}`}
+          comment={`@${userName} `}
           tag="reply"
           mainCommentId={mainCommentId}
           setShowForm={setShowForm}

@@ -57,6 +57,7 @@ export const commentsReducer = (state = initialState, action: Action) => {
         comments: newArr, // assign the new Array to the comments
       };
     }
+
     case UPDATE_COMMENT:
       return {
         ...state,
