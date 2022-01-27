@@ -2,6 +2,7 @@ import { Comment, replyCommentInterface } from "./../../interfaces/interface";
 import {
   ADD_NEW_COMMENT,
   ADD_NEW_REPLY,
+  DELETE_A_COMMENT,
   UPDATE_COMMENT,
 } from "./../actionTypes/commentType";
 import { GET_ALL_COMMENTS } from "../actionTypes/commentType";
@@ -30,6 +31,13 @@ export const addNewReply = (data: replyCommentInterface) => {
 export const updateComment = (data: Comment | replyCommentInterface) => {
   return {
     type: UPDATE_COMMENT,
+    payload: data,
+  };
+};
+
+export const deleteComment = (data: Comment | replyCommentInterface) => {
+  return {
+    type: DELETE_A_COMMENT,
     payload: data,
   };
 };

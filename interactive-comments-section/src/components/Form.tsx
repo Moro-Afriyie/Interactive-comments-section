@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import * as React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -34,6 +33,8 @@ const Form: React.FunctionComponent<IFormProps> = ({
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    // check if the form is empty
+    if (!formComment) return;
     if (formType === "reply") {
       const reply = {
         mainCommentId: mainCommentId || 0,
@@ -46,9 +47,6 @@ const Form: React.FunctionComponent<IFormProps> = ({
         votes: 0,
       };
       dispatch(addNewReply(reply));
-      // console.log({
-      //   reply,
-      // });
       setShowForm?.(false);
     } else if (formType === "update") {
       // only need the commentId, tag and the updated comment value

@@ -2,6 +2,7 @@ import { replyCommentInterface } from "./../../interfaces/interface";
 import {
   ADD_NEW_COMMENT,
   ADD_NEW_REPLY,
+  DELETE_A_COMMENT,
   UPDATE_COMMENT,
 } from "./../actionTypes/commentType";
 import { Comment } from "../../interfaces/interface";
@@ -28,7 +29,8 @@ type Action =
     }
   | { type: typeof ADD_NEW_COMMENT; payload: Comment }
   | { type: typeof ADD_NEW_REPLY; payload: replyCommentInterface }
-  | { type: typeof UPDATE_COMMENT; payload: replyCommentInterface };
+  | { type: typeof UPDATE_COMMENT; payload: replyCommentInterface }
+  | { type: typeof DELETE_A_COMMENT; payload: Comment | replyCommentInterface };
 
 export const commentsReducer = (state = initialState, action: Action) => {
   switch (action.type) {
@@ -63,6 +65,13 @@ export const commentsReducer = (state = initialState, action: Action) => {
         ...state,
         comments: [],
       };
+
+    case DELETE_A_COMMENT: {
+      return {
+        ...state,
+        comments: [],
+      };
+    }
     default:
       return state;
   }
