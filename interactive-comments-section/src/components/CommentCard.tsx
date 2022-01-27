@@ -120,6 +120,7 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
                   mainCommentId={mainCommentId}
                   replyCommentId={replyCommentId}
                   comment={comment}
+                  setShowUpdateForm={setShowUpdateForm}
                 />
               ) : (
                 <Form
@@ -127,6 +128,7 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
                   tag={tag}
                   mainCommentId={mainCommentId}
                   comment={comment}
+                  setShowUpdateForm={setShowUpdateForm}
                 />
               ))
             ) : (
@@ -184,6 +186,7 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
           comment={`@${userName}`}
           tag="reply"
           mainCommentId={mainCommentId}
+          setShowForm={setShowForm}
         />
       )}
       {showDeleteModal && <Modal setShowDeleteModal={setShowDeleteModal} />}

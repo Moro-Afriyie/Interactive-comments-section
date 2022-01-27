@@ -1,5 +1,9 @@
 import { replyCommentInterface } from "./../../interfaces/interface";
-import { ADD_NEW_COMMENT, UPDATE_COMMENT } from "./../actionTypes/commentType";
+import {
+  ADD_NEW_COMMENT,
+  ADD_NEW_REPLY,
+  UPDATE_COMMENT,
+} from "./../actionTypes/commentType";
 import { Comment } from "../../interfaces/interface";
 import { GET_ALL_COMMENTS } from "../actionTypes/commentType";
 import { data } from "./../../models/data";
@@ -23,6 +27,7 @@ type Action =
       payload: Comment[];
     }
   | { type: typeof ADD_NEW_COMMENT; payload: Comment }
+  | { type: typeof ADD_NEW_REPLY; payload: replyCommentInterface }
   | { type: typeof UPDATE_COMMENT; payload: replyCommentInterface };
 
 export const commentsReducer = (state = initialState, action: Action) => {
@@ -37,6 +42,21 @@ export const commentsReducer = (state = initialState, action: Action) => {
         ...state,
         comments: [...state.comments, action.payload],
       };
+
+    case ADD_NEW_REPLY: {
+      // get the index
+      const index = state.comments.findIndex(
+        (comment) => comment.commentId === action.payload.mainCommentId
+      );
+      // make a new Array
+      const newArr = [...state.comments];
+      newArr[index].replies.push(action.payload); // updating the replies in the new Array
+
+      return {
+        ...state,
+        comments: newArr, // assign the new Array to the comments
+      };
+    }
     case UPDATE_COMMENT:
       return {
         ...state,

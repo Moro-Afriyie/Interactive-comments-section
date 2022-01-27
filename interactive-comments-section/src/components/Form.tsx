@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import * as React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +13,8 @@ interface IFormProps {
   replyCommentId?: number;
   comment?: string;
   tag: string;
+  setShowForm?: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowUpdateForm?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Form: React.FunctionComponent<IFormProps> = ({
@@ -20,19 +23,13 @@ const Form: React.FunctionComponent<IFormProps> = ({
   replyCommentId,
   tag,
   comment,
+  setShowForm,
+  setShowUpdateForm,
 }) => {
   const currentUser = useSelector(
     (state: IRootReducerState) => state.currentUser
   );
-
-  const comments = useSelector(
-    (state: IRootReducerState) => state.comments.comments
-  );
-
   const dispatch = useDispatch();
-
-  console.log(comments);
-
   const [formComment, setFormComment] = useState(comment);
 
   const handleSubmit = (event: React.FormEvent) => {
@@ -49,9 +46,10 @@ const Form: React.FunctionComponent<IFormProps> = ({
         votes: 0,
       };
       dispatch(addNewReply(reply));
-      console.log({
-        reply,
-      });
+      // console.log({
+      //   reply,
+      // });
+      setShowForm?.(false);
     } else if (formType === "update") {
       // only need the commentId, tag and the updated comment value
       console.log("update");
@@ -71,6 +69,7 @@ const Form: React.FunctionComponent<IFormProps> = ({
           date: "",
         });
       }
+      setShowUpdateForm?.(false);
     } else {
       const newComment: Comment = {
         commentId: 3,
@@ -82,9 +81,6 @@ const Form: React.FunctionComponent<IFormProps> = ({
         date: "",
         votes: 0,
       };
-      console.log({
-        newComment,
-      });
       dispatch(addNewComment(newComment));
       setFormComment("");
     }
