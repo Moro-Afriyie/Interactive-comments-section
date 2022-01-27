@@ -1,7 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Comment, replyCommentInterface } from "../interfaces/interface";
+import { addNewComment, addNewReply } from "../store/actions/commentAction";
 import { IRootReducerState } from "../store/reducers/rootReducer";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -24,21 +25,30 @@ const Form: React.FunctionComponent<IFormProps> = ({
     (state: IRootReducerState) => state.currentUser
   );
 
+  const comments = useSelector(
+    (state: IRootReducerState) => state.comments.comments
+  );
+
+  const dispatch = useDispatch();
+
+  console.log(comments);
+
   const [formComment, setFormComment] = useState(comment);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (formType === "reply") {
       const reply = {
-        mainCommentId: mainCommentId,
+        mainCommentId: mainCommentId || 0,
         replyCommentId: 4, // give it a new replyId
         userName: currentUser.userName,
         avatar: currentUser.avatar,
         tag: tag,
-        reply: formComment,
+        reply: formComment || "",
         date: "",
         votes: 0,
       };
+      dispatch(addNewReply(reply));
       console.log({
         reply,
       });
@@ -62,12 +72,12 @@ const Form: React.FunctionComponent<IFormProps> = ({
         });
       }
     } else {
-      const newComment = {
+      const newComment: Comment = {
         commentId: 3,
         tag: tag,
         userName: currentUser.userName,
         avatar: currentUser.avatar,
-        mainComment: formComment,
+        mainComment: formComment || "",
         replies: [],
         date: "",
         votes: 0,
@@ -75,7 +85,8 @@ const Form: React.FunctionComponent<IFormProps> = ({
       console.log({
         newComment,
       });
-      console.log("send");
+      dispatch(addNewComment(newComment));
+      setFormComment("");
     }
   };
 
@@ -106,7 +117,7 @@ const Form: React.FunctionComponent<IFormProps> = ({
         name="comment"
         id="comment"
         placeholder="Add a comment..."
-        value={formComment || undefined}
+        value={formComment || ""}
         onChange={(e) => setFormComment(e.target.value)}
       ></textarea>
       <button

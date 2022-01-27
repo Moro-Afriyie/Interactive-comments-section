@@ -22,8 +22,8 @@ type Action =
       type: typeof GET_ALL_COMMENTS;
       payload: Comment[];
     }
-  | { type: typeof ADD_NEW_COMMENT; payload: Comment | replyCommentInterface }
-  | { type: typeof UPDATE_COMMENT; payload: Comment | replyCommentInterface };
+  | { type: typeof ADD_NEW_COMMENT; payload: Comment }
+  | { type: typeof UPDATE_COMMENT; payload: replyCommentInterface };
 
 export const commentsReducer = (state = initialState, action: Action) => {
   switch (action.type) {
@@ -35,7 +35,7 @@ export const commentsReducer = (state = initialState, action: Action) => {
     case ADD_NEW_COMMENT:
       return {
         ...state,
-        comments: [],
+        comments: [...state.comments, action.payload],
       };
     case UPDATE_COMMENT:
       return {

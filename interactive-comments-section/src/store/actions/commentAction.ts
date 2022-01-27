@@ -9,7 +9,14 @@ export const getAllComments = (data: Comment[]) => {
   };
 };
 
-export const addNewComment = (data: Comment | replyCommentInterface) => {
+export const addNewComment = (data: Comment) => {
+  return {
+    type: ADD_NEW_COMMENT,
+    payload: data,
+  };
+};
+
+export const addNewReply = (data: replyCommentInterface) => {
   return {
     type: ADD_NEW_COMMENT,
     payload: data,
