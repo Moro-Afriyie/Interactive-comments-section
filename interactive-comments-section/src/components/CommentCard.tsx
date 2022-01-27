@@ -9,6 +9,7 @@ import Modal from "./Modal";
 import { useSelector } from "react-redux";
 import { IRootReducerState } from "../store/reducers/rootReducer";
 import { useState } from "react";
+import TimeAgo from "react-timeago";
 
 interface ICommentProps {
   mainCommentId: number;
@@ -71,8 +72,10 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
                 you
               </p>
             )}
-
             <p className="text-grayishBlue">1 month ago</p>
+            {/* <p className="text-grayishBlue">
+              <TimeAgo date={new Date(date)} />
+            </p> */}
             {/**Reply , edit and delete buttons for desktop*/}
             {currentUser.userName === userName ? (
               <div className="sm:flex  hidden items-center  px-2 gap-8 cursor-pointer h-8 sm:ml-auto">
