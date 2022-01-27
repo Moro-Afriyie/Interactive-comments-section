@@ -13,7 +13,7 @@ export const data: Comment[] = [
     mainComment:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
     replies: [],
-    date: "",
+    date: "1 month ago",
     votes: 12,
   },
   {
@@ -32,7 +32,7 @@ export const data: Comment[] = [
         avatar: ramsesmiron,
         reply:
           "@maxblagun Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
-        date: "",
+        date: "1 week ago",
         votes: 4,
       },
       {
@@ -43,11 +43,11 @@ export const data: Comment[] = [
         tag: "reply",
         reply:
           "@ramsesmiron Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
-        date: "",
+        date: "2 days ago",
         votes: 2,
       },
     ],
-    date: "",
+    date: "2 weeks ago",
     votes: 5,
   },
 ];
