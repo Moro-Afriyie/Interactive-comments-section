@@ -62,13 +62,23 @@ export const commentsReducer = (state = initialState, action: Action) => {
 
     case UPDATE_COMMENT: {
       if (action.payload.tag === "main") {
-        console.log("main");
-        console.log(action.payload);
+        // get the index
+        const index = state.comments.findIndex(
+          (comment) => comment.commentId === action.payload.mainCommentId
+        );
+        // make a new Array
+        const newArr = [...state.comments];
+        newArr[index].mainComment = action.payload.comment; // updating the replies in the new Array
+        return {
+          ...state,
+          comments: newArr,
+        };
+      } else {
+        return {
+          ...state,
+          comments: [],
+        };
       }
-      return {
-        ...state,
-        comments: [],
-      };
     }
 
     case DELETE_A_COMMENT: {
