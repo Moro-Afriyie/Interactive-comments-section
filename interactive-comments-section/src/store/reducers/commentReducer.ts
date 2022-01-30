@@ -79,15 +79,6 @@ export const commentsReducer = (state = initialState, action: Action) => {
         );
 
         // get the replies index of the reply from the replies array
-        //  const replyIndex = state.comments.findIndex(
-        //    (comment) => {
-        //    const main =  comment.commentId === action.payload.mainCommentId;
-        //      return main.replies.findIndex(
-        //        (reply: replyCommentInterface) =>
-        //          reply.replyCommentId === action.payload.replyCommentId
-        //      );
-        //     }
-        //  );
         const replyIndex = state.comments[index].replies.findIndex(
           (reply: replyCommentInterface) =>
             reply.replyCommentId === action.payload.replyCommentId
