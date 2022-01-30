@@ -63,6 +63,15 @@ const Form: React.FunctionComponent<IFormProps> = ({
           comment: formComment,
           date: "",
         });
+        dispatch(
+          updateComment({
+            mainCommentId: mainCommentId || 0,
+            replyCommentId: replyCommentId,
+            tag: tag,
+            comment: formComment || "",
+            date: "",
+          })
+        );
       } else if (tag === "main") {
         console.log({
           maincommentId: mainCommentId,

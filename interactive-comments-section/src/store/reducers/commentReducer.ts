@@ -62,21 +62,41 @@ export const commentsReducer = (state = initialState, action: Action) => {
 
     case UPDATE_COMMENT: {
       if (action.payload.tag === "main") {
-        // get the index
         const index = state.comments.findIndex(
           (comment) => comment.commentId === action.payload.mainCommentId
         );
-        // make a new Array
+
         const newArr = [...state.comments];
-        newArr[index].mainComment = action.payload.comment; // updating the replies in the new Array
+        newArr[index].mainComment = action.payload.comment;
         return {
           ...state,
           comments: newArr,
         };
       } else {
+        // get the index of the main comment
+        const index = state.comments.findIndex(
+          (comment) => comment.commentId === action.payload.mainCommentId
+        );
+
+        // get the replies index of the reply from the replies array
+        //  const replyIndex = state.comments.findIndex(
+        //    (comment) => {
+        //    const main =  comment.commentId === action.payload.mainCommentId;
+        //      return main.replies.findIndex(
+        //        (reply: replyCommentInterface) =>
+        //          reply.replyCommentId === action.payload.replyCommentId
+        //      );
+        //     }
+        //  );
+        const replyIndex = state.comments[index].replies.findIndex(
+          (reply: replyCommentInterface) =>
+            reply.replyCommentId === action.payload.replyCommentId
+        );
+        const newArr = [...state.comments];
+        newArr[index].replies[replyIndex].reply = action.payload.comment;
         return {
           ...state,
-          comments: [],
+          comments: newArr,
         };
       }
     }
