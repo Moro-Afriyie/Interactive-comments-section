@@ -29,7 +29,7 @@ type Action =
     }
   | { type: typeof ADD_NEW_COMMENT; payload: Comment }
   | { type: typeof ADD_NEW_REPLY; payload: replyCommentInterface }
-  | { type: typeof UPDATE_COMMENT; payload: replyCommentInterface }
+  | { type: typeof UPDATE_COMMENT; payload: any }
   | { type: typeof DELETE_A_COMMENT; payload: Comment | replyCommentInterface };
 
 export const commentsReducer = (state = initialState, action: Action) => {
@@ -60,11 +60,16 @@ export const commentsReducer = (state = initialState, action: Action) => {
       };
     }
 
-    case UPDATE_COMMENT:
+    case UPDATE_COMMENT: {
+      if (action.payload.tag === "main") {
+        console.log("main");
+        console.log(action.payload);
+      }
       return {
         ...state,
         comments: [],
       };
+    }
 
     case DELETE_A_COMMENT: {
       return {

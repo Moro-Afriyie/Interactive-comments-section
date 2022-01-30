@@ -9,6 +9,17 @@ function App() {
   const comments: Comment[] = useSelector(
     (state: IRootReducerState) => state.comments.comments
   );
+  // const [clientWindowHeight, setClientWindowHeight] = useState(0);
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [clientWindowHeight]);
+
+  // const handleScroll = () => {
+  //   setClientWindowHeight(window.scrollY);
+  //   console.log(clientWindowHeight);
+  // };
 
   return (
     <main className="min-h-screen relative items-center bg-veryLightGray flex justify-center pt-3 pb-5 ">

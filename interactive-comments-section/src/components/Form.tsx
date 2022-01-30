@@ -2,7 +2,11 @@ import * as React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Comment, replyCommentInterface } from "../interfaces/interface";
-import { addNewComment, addNewReply } from "../store/actions/commentAction";
+import {
+  addNewComment,
+  addNewReply,
+  updateComment,
+} from "../store/actions/commentAction";
 import { IRootReducerState } from "../store/reducers/rootReducer";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -59,13 +63,23 @@ const Form: React.FunctionComponent<IFormProps> = ({
           comment: formComment,
           date: "",
         });
-      } else {
+      } else if (tag === "main") {
         console.log({
           maincommentId: mainCommentId,
           tag: tag,
           comment: formComment,
           date: "",
         });
+        dispatch(
+          updateComment({
+            mainCommentId: mainCommentId || 0,
+            tag: tag,
+            comment: formComment || "",
+            date: "",
+          })
+        );
+      } else {
+        return;
       }
       setShowUpdateForm?.(false);
     } else {

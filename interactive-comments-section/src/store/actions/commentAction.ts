@@ -28,7 +28,7 @@ export const addNewReply = (data: replyCommentInterface) => {
   };
 };
 
-export const updateComment = (data: Comment | replyCommentInterface) => {
+export const updateComment = (data: any) => {
   return {
     type: UPDATE_COMMENT,
     payload: data,
