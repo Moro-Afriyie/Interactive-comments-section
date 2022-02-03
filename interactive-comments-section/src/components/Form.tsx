@@ -8,6 +8,7 @@ import {
   updateComment,
 } from "../store/actions/commentAction";
 import { IRootReducerState } from "../store/reducers/rootReducer";
+import { v4 as uuidv4 } from "uuid";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface IFormProps {
@@ -37,6 +38,7 @@ const Form: React.FunctionComponent<IFormProps> = ({
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+
     // check if the form is empty
     if (!formComment) return;
     if (formType === "reply") {
