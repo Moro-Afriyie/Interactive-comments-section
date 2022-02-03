@@ -1,4 +1,4 @@
-export interface PeplyComment {
+export interface ReplyComment {
   mainCommentId: number;
   replyCommentId: number;
   userName: string;
@@ -15,7 +15,7 @@ export interface Comment {
   userName: string;
   avatar: string;
   mainComment: string;
-  replies: PeplyComment[];
+  replies: ReplyComment[];
   date: string;
   votes: number;
 }

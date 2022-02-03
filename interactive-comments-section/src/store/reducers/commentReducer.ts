@@ -1,4 +1,4 @@
-import { PeplyComment } from "./../../interfaces/interface";
+import { ReplyComment } from "./../../interfaces/interface";
 import {
   ADD_NEW_COMMENT,
   ADD_NEW_REPLY,
@@ -28,9 +28,9 @@ type Action =
       payload: Comment[];
     }
   | { type: typeof ADD_NEW_COMMENT; payload: Comment }
-  | { type: typeof ADD_NEW_REPLY; payload: PeplyComment }
+  | { type: typeof ADD_NEW_REPLY; payload: ReplyComment }
   | { type: typeof UPDATE_COMMENT; payload: any }
-  | { type: typeof DELETE_A_COMMENT; payload: Comment | PeplyComment };
+  | { type: typeof DELETE_A_COMMENT; payload: Comment | ReplyComment };
 
 export const commentsReducer = (state = initialState, action: Action) => {
   switch (action.type) {
@@ -80,7 +80,7 @@ export const commentsReducer = (state = initialState, action: Action) => {
 
         // get the replies index of the reply from the replies array
         const replyIndex = state.comments[index].replies.findIndex(
-          (reply: PeplyComment) =>
+          (reply: ReplyComment) =>
             reply.replyCommentId === action.payload.replyCommentId
         );
         const newArr = [...state.comments];

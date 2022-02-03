@@ -1,4 +1,4 @@
-import { Comment, PeplyComment } from "./../../interfaces/interface";
+import { Comment, ReplyComment } from "./../../interfaces/interface";
 import {
   ADD_NEW_COMMENT,
   ADD_NEW_REPLY,
@@ -21,7 +21,7 @@ export const addNewComment = (data: Comment) => {
   };
 };
 
-export const addNewReply = (data: PeplyComment) => {
+export const addNewReply = (data: ReplyComment) => {
   return {
     type: ADD_NEW_REPLY,
     payload: data,
@@ -35,7 +35,7 @@ export const updateComment = (data: any) => {
   };
 };
 
-export const deleteComment = (data: Comment | PeplyComment) => {
+export const deleteComment = (data: Comment | ReplyComment) => {
   return {
     type: DELETE_A_COMMENT,
     payload: data,

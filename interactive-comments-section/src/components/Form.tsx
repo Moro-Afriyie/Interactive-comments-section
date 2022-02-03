@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Comment, PeplyComment } from "../interfaces/interface";
+import { Comment, ReplyComment } from "../interfaces/interface";
 import {
   addNewComment,
   addNewReply,
