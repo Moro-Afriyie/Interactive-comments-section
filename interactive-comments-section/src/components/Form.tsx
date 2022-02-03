@@ -57,7 +57,7 @@ const Form: React.FunctionComponent<IFormProps> = ({
       if (tag === "reply") {
         dispatch(
           updateComment({
-            mainCommentId: mainCommentId || 0,
+            mainCommentId: mainCommentId || "",
             replyCommentId: replyCommentId,
             tag: tag,
             comment: formComment || "",
@@ -67,7 +67,7 @@ const Form: React.FunctionComponent<IFormProps> = ({
       } else if (tag === "main") {
         dispatch(
           updateComment({
-            mainCommentId: mainCommentId || 0,
+            mainCommentId: mainCommentId || "",
             tag: tag,
             comment: formComment || "",
             date: "",
