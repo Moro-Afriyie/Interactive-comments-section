@@ -1,5 +1,6 @@
 import {
   Comment,
+  DeleteComment,
   ReplyComment,
   UpdateComment,
 } from "./../../interfaces/interface";
@@ -39,7 +40,7 @@ export const updateComment = (data: UpdateComment) => {
   };
 };
 
-export const deleteComment = (data: Comment | ReplyComment) => {
+export const deleteComment = (data: DeleteComment) => {
   return {
     type: DELETE_A_COMMENT,
     payload: data,

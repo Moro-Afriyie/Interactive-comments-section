@@ -1,4 +1,8 @@
-import { ReplyComment } from "./../../interfaces/interface";
+import {
+  DeleteComment,
+  ReplyComment,
+  UpdateComment,
+} from "./../../interfaces/interface";
 import {
   ADD_NEW_COMMENT,
   ADD_NEW_REPLY,
@@ -29,8 +33,8 @@ type Action =
     }
   | { type: typeof ADD_NEW_COMMENT; payload: Comment }
   | { type: typeof ADD_NEW_REPLY; payload: ReplyComment }
-  | { type: typeof UPDATE_COMMENT; payload: any }
-  | { type: typeof DELETE_A_COMMENT; payload: Comment | ReplyComment };
+  | { type: typeof UPDATE_COMMENT; payload: UpdateComment }
+  | { type: typeof DELETE_A_COMMENT; payload: DeleteComment };
 
 export const commentsReducer = (state = initialState, action: Action) => {
   switch (action.type) {

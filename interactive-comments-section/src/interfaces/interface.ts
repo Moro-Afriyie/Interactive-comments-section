@@ -32,3 +32,9 @@ export interface UpdateComment {
   comment: string;
   date: string;
 }
+
+export interface DeleteComment {
+  tag: string;
+  mainCommentId: string;
+  replyCommentId: string;
+}
