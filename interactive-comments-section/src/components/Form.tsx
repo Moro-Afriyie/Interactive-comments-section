@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Comment, replyCommentInterface } from "../interfaces/interface";
+import { Comment, PeplyComment } from "../interfaces/interface";
 import {
   addNewComment,
   addNewReply,
@@ -53,16 +53,7 @@ const Form: React.FunctionComponent<IFormProps> = ({
       dispatch(addNewReply(reply));
       setShowForm?.(false);
     } else if (formType === "update") {
-      // only need the commentId, tag and the updated comment value
-      console.log("update");
       if (tag === "reply") {
-        console.log({
-          maincommentId: mainCommentId,
-          replyCommentId: replyCommentId,
-          tag: tag,
-          comment: formComment,
-          date: "",
-        });
         dispatch(
           updateComment({
             mainCommentId: mainCommentId || 0,
@@ -73,12 +64,6 @@ const Form: React.FunctionComponent<IFormProps> = ({
           })
         );
       } else if (tag === "main") {
-        console.log({
-          maincommentId: mainCommentId,
-          tag: tag,
-          comment: formComment,
-          date: "",
-        });
         dispatch(
           updateComment({
             mainCommentId: mainCommentId || 0,
@@ -87,8 +72,6 @@ const Form: React.FunctionComponent<IFormProps> = ({
             date: "",
           })
         );
-      } else {
-        return;
       }
       setShowUpdateForm?.(false);
     } else {
