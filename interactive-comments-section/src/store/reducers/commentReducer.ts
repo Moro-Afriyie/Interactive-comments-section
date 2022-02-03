@@ -97,9 +97,29 @@ export const commentsReducer = (state = initialState, action: Action) => {
     }
 
     case DELETE_A_COMMENT: {
+      let newArr: Comment[] = [];
+      if (action.payload.tag === "main") {
+        newArr = state.comments.filter(
+          (comment) => comment.commentId !== action.payload.mainCommentId
+        );
+      } else if (action.payload.tag === "reply") {
+        // get the index of the main comment
+        const index = state.comments.findIndex(
+          (comment) => comment.commentId === action.payload.mainCommentId
+        );
+
+        newArr = [...state.comments];
+        // filter the replies
+        const newReplyArr = state.comments[index].replies.filter(
+          (reply: ReplyComment) =>
+            reply.replyCommentId !== action.payload.replyCommentId
+        );
+
+        newArr[index].replies = newReplyArr;
+      }
       return {
         ...state,
-        comments: [],
+        comments: newArr,
       };
     }
     default:

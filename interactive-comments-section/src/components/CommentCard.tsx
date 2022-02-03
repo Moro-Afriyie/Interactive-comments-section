@@ -189,7 +189,14 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
           setShowForm={setShowForm}
         />
       )}
-      {showDeleteModal && <Modal setShowDeleteModal={setShowDeleteModal} />}
+      {showDeleteModal && (
+        <Modal
+          mainCommentId={mainCommentId}
+          tag={tag}
+          replyCommentId={replyCommentId}
+          setShowDeleteModal={setShowDeleteModal}
+        />
+      )}
     </div>
   );
 };

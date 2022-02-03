@@ -36,5 +36,5 @@ export interface UpdateComment {
 export interface DeleteComment {
   tag: string;
   mainCommentId: string;
-  replyCommentId: string;
+  replyCommentId?: string;
 }
