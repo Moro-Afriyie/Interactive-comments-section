@@ -1,6 +1,6 @@
 export interface ReplyComment {
-  mainCommentId: number;
-  replyCommentId: number;
+  mainCommentId: string;
+  replyCommentId: string;
   userName: string;
   avatar: string;
   tag: string;
@@ -10,7 +10,7 @@ export interface ReplyComment {
 }
 
 export interface Comment {
-  commentId: number;
+  commentId: string;
   tag: string;
   userName: string;
   avatar: string;

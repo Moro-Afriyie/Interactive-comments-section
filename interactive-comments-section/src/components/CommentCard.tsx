@@ -12,14 +12,14 @@ import { useState } from "react";
 import TimeAgo from "react-timeago";
 
 interface ICommentProps {
-  mainCommentId: number;
+  mainCommentId: string;
   userName: string;
   tag: string;
   avatar: string;
   comment: string;
   date: string;
   votes: number;
-  replyCommentId?: number;
+  replyCommentId?: string;
 }
 
 const CommentCard: React.FunctionComponent<ICommentProps> = ({

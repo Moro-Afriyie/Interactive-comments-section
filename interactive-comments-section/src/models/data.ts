@@ -6,7 +6,7 @@ import ramsesmiron from "../assets/avatars/image-ramsesmiron.png";
 
 export const data: Comment[] = [
   {
-    commentId: 1,
+    commentId: "111a57a4733346459b73923f98c33061",
     userName: "armyrobson",
     avatar: amyrobson,
     tag: "main",
@@ -17,7 +17,7 @@ export const data: Comment[] = [
     votes: 12,
   },
   {
-    commentId: 2,
+    commentId: "78460d4c742945e8a7dad4f284ef3694",
     userName: "maxblagun",
     avatar: maxblagun,
     tag: "main",
@@ -25,8 +25,8 @@ export const data: Comment[] = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
     replies: [
       {
-        mainCommentId: 2,
-        replyCommentId: 1,
+        mainCommentId: "78460d4c742945e8a7dad4f284ef3694",
+        replyCommentId: "a706e098efbf48499e6bd976b586e79c",
         tag: "reply",
         userName: "ramsesmiron",
         avatar: ramsesmiron,
@@ -36,8 +36,8 @@ export const data: Comment[] = [
         votes: 4,
       },
       {
-        mainCommentId: 2,
-        replyCommentId: 2,
+        mainCommentId: "78460d4c742945e8a7dad4f284ef3694",
+        replyCommentId: "486f49c733ce41ffb06f55746fa6dd3a",
         userName: "juliusomo",
         avatar: juliusomo,
         tag: "reply",

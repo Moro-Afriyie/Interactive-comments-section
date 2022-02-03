@@ -13,8 +13,8 @@ import { v4 as uuidv4 } from "uuid";
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface IFormProps {
   formType: string;
-  mainCommentId?: number;
-  replyCommentId?: number;
+  mainCommentId?: string;
+  replyCommentId?: string;
   comment?: string;
   tag: string;
   setShowForm?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -38,13 +38,13 @@ const Form: React.FunctionComponent<IFormProps> = ({
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-
+    console.log(uuidv4().split("-").join(""));
     // check if the form is empty
     if (!formComment) return;
     if (formType === "reply") {
       const reply = {
-        mainCommentId: mainCommentId || 0,
-        replyCommentId: 4, // give it a new replyId
+        mainCommentId: mainCommentId || "",
+        replyCommentId: uuidv4().split("-").join(""),
         userName: currentUser.userName,
         avatar: currentUser.avatar,
         tag: tag,
@@ -78,7 +78,7 @@ const Form: React.FunctionComponent<IFormProps> = ({
       setShowUpdateForm?.(false);
     } else {
       const newComment: Comment = {
-        commentId: 3,
+        commentId: uuidv4().split("-").join(""),
         tag: tag,
         userName: currentUser.userName,
         avatar: currentUser.avatar,
