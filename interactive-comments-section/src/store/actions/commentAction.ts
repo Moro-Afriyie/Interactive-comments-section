@@ -1,4 +1,8 @@
-import { Comment, ReplyComment } from "./../../interfaces/interface";
+import {
+  Comment,
+  ReplyComment,
+  UpdateComment,
+} from "./../../interfaces/interface";
 import {
   ADD_NEW_COMMENT,
   ADD_NEW_REPLY,
@@ -28,7 +32,7 @@ export const addNewReply = (data: ReplyComment) => {
   };
 };
 
-export const updateComment = (data: any) => {
+export const updateComment = (data: UpdateComment) => {
   return {
     type: UPDATE_COMMENT,
     payload: data,

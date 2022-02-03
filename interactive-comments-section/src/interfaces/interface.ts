@@ -24,3 +24,11 @@ export interface CurrentUser {
   userName: string;
   avatar: string;
 }
+
+export interface UpdateComment {
+  mainCommentId: string;
+  replyCommentId?: string;
+  tag: string;
+  comment: string;
+  date: string;
+}
