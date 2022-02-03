@@ -38,7 +38,6 @@ const Form: React.FunctionComponent<IFormProps> = ({
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log(uuidv4().split("-").join(""));
     // check if the form is empty
     if (!formComment) return;
     if (formType === "reply") {
