@@ -46,6 +46,22 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
     setFormType(formType);
   };
 
+  const increaseVotes = () => {
+    console.log({
+      tag,
+      mainCommentId,
+      replyCommentId,
+    });
+  };
+
+  const decreaseVotes = () => {
+    console.log({
+      tag,
+      mainCommentId,
+      replyCommentId,
+    });
+  };
+
   return (
     <div className="flex flex-col gap-2 px-3">
       <div className="bg-white  shadow-sm p-3 grid gap-4 rounded-md sm:flex w-full font-rubik">
