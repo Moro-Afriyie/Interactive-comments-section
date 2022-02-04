@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { IRootReducerState } from "../store/reducers/rootReducer";
 import { useState } from "react";
 import TimeAgo from "react-timeago";
-import { increaseVotes } from "../store/actions/commentAction";
+import { decreaseVotes, increaseVotes } from "../store/actions/commentAction";
 
 interface ICommentProps {
   mainCommentId: string;
@@ -73,11 +73,22 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
   };
 
   const handleDecreaseVotes = () => {
-    console.log({
-      tag,
-      mainCommentId,
-      replyCommentId,
-    });
+    if (tag === "main") {
+      dispatch(
+        decreaseVotes({
+          tag,
+          mainCommentId,
+        })
+      );
+    } else {
+      dispatch(
+        decreaseVotes({
+          tag,
+          mainCommentId,
+          replyCommentId,
+        })
+      );
+    }
   };
 
   return (
