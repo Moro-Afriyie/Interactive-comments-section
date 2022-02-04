@@ -7,7 +7,9 @@ import {
 import {
   ADD_NEW_COMMENT,
   ADD_NEW_REPLY,
+  DECREASE_VOTES,
   DELETE_A_COMMENT,
+  INCREASE_VOTES,
   UPDATE_COMMENT,
 } from "./../actionTypes/commentType";
 import { GET_ALL_COMMENTS } from "../actionTypes/commentType";
@@ -43,6 +45,20 @@ export const updateComment = (data: UpdateComment) => {
 export const deleteComment = (data: DeleteComment) => {
   return {
     type: DELETE_A_COMMENT,
+    payload: data,
+  };
+};
+
+export const increaseVotes = (data: DeleteComment) => {
+  return {
+    type: INCREASE_VOTES,
+    payload: data,
+  };
+};
+
+export const decreaseVotes = (data: DeleteComment) => {
+  return {
+    type: DECREASE_VOTES,
     payload: data,
   };
 };
