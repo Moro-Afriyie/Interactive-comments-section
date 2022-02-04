@@ -6,7 +6,9 @@ import {
 import {
   ADD_NEW_COMMENT,
   ADD_NEW_REPLY,
+  DECREASE_VOTES,
   DELETE_A_COMMENT,
+  INCREASE_VOTES,
   UPDATE_COMMENT,
 } from "./../actionTypes/commentType";
 import { Comment } from "../../interfaces/interface";
@@ -34,7 +36,9 @@ type Action =
   | { type: typeof ADD_NEW_COMMENT; payload: Comment }
   | { type: typeof ADD_NEW_REPLY; payload: ReplyComment }
   | { type: typeof UPDATE_COMMENT; payload: UpdateComment }
-  | { type: typeof DELETE_A_COMMENT; payload: DeleteComment };
+  | { type: typeof DELETE_A_COMMENT; payload: DeleteComment }
+  | { type: typeof INCREASE_VOTES; payload: DeleteComment }
+  | { type: typeof DECREASE_VOTES; payload: DeleteComment };
 
 export const commentsReducer = (state = initialState, action: Action) => {
   switch (action.type) {
@@ -122,6 +126,21 @@ export const commentsReducer = (state = initialState, action: Action) => {
         comments: newArr,
       };
     }
+
+    case INCREASE_VOTES: {
+      return {
+        ...state,
+        comments: [],
+      };
+    }
+
+    case DECREASE_VOTES: {
+      return {
+        ...state,
+        comments: [],
+      };
+    }
+
     default:
       return state;
   }
