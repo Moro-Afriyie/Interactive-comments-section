@@ -49,11 +49,8 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
   };
 
   const handleIncreaseVotes = () => {
-    console.log({
-      tag,
-      mainCommentId,
-      replyCommentId,
-    });
+    // to prevent users from updating their own votes
+    if (currentUser.userName === userName) return;
     if (tag === "main") {
       dispatch(
         increaseVotes({
@@ -73,6 +70,8 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
   };
 
   const handleDecreaseVotes = () => {
+    // if (votes === 0 || currentUser.userName === userName) return;
+    if (currentUser.userName === userName) return;
     if (tag === "main") {
       dispatch(
         decreaseVotes({
