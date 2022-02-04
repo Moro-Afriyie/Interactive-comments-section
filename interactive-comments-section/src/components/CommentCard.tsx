@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { IRootReducerState } from "../store/reducers/rootReducer";
 import { useState } from "react";
 import TimeAgo from "react-timeago";
+import { increaseVotes } from "../store/actions/commentAction";
 
 interface ICommentProps {
   mainCommentId: string;
@@ -47,15 +48,31 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
     setFormType(formType);
   };
 
-  const increaseVotes = () => {
+  const handleIncreaseVotes = () => {
     console.log({
       tag,
       mainCommentId,
       replyCommentId,
     });
+    if (tag === "main") {
+      dispatch(
+        increaseVotes({
+          tag,
+          mainCommentId,
+        })
+      );
+    } else {
+      dispatch(
+        increaseVotes({
+          tag,
+          mainCommentId,
+          replyCommentId,
+        })
+      );
+    }
   };
 
-  const decreaseVotes = () => {
+  const handleDecreaseVotes = () => {
     console.log({
       tag,
       mainCommentId,
@@ -72,14 +89,14 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
             src={plus}
             alt="plus icon"
             className="cursor-pointer"
-            onClick={increaseVotes}
+            onClick={handleIncreaseVotes}
           />
           <p className="text-moderateBlue text-sm font-bold">{votes}</p>
           <img
             src={minus}
             alt="minus icon"
             className="cursor-pointer"
-            onClick={decreaseVotes}
+            onClick={handleDecreaseVotes}
           />
         </div>
         {/*end vote button on desktop**/}
@@ -178,14 +195,14 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
               src={plus}
               alt="plus icon"
               className="cursor-pointer"
-              onClick={increaseVotes}
+              onClick={handleIncreaseVotes}
             />
             <p className="text-moderateBlue text-sm font-bold">{votes}</p>
             <img
               src={minus}
               alt="minus icon"
               className="cursor-pointer"
-              onClick={decreaseVotes}
+              onClick={handleDecreaseVotes}
             />
           </div>
           {/**Reply , edit and delete buttons for mobile */}

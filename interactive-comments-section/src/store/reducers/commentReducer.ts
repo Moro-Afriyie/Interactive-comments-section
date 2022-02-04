@@ -128,10 +128,35 @@ export const commentsReducer = (state = initialState, action: Action) => {
     }
 
     case INCREASE_VOTES: {
-      return {
-        ...state,
-        comments: [],
-      };
+      if (action.payload.tag === "main") {
+        const index = state.comments.findIndex(
+          (comment) => comment.commentId === action.payload.mainCommentId
+        );
+
+        const newArr = [...state.comments];
+        newArr[index].votes += 1;
+        return {
+          ...state,
+          comments: newArr,
+        };
+      } else {
+        // get the index of the main comment
+        const index = state.comments.findIndex(
+          (comment) => comment.commentId === action.payload.mainCommentId
+        );
+
+        // get the replies index of the reply from the replies array
+        const replyIndex = state.comments[index].replies.findIndex(
+          (reply: ReplyComment) =>
+            reply.replyCommentId === action.payload.replyCommentId
+        );
+        const newArr = [...state.comments];
+        newArr[index].replies[replyIndex].votes += 1;
+        return {
+          ...state,
+          comments: newArr,
+        };
+      }
     }
 
     case DECREASE_VOTES: {
