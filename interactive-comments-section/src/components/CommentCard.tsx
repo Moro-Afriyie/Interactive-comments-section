@@ -92,7 +92,7 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
 
   return (
     <div className="flex flex-col gap-2 px-3">
-      <div className="bg-white  shadow-sm p-3 grid gap-4 rounded-md sm:flex w-full font-rubik">
+      <div className="bg-white  shadow-sm p-3 sm:pl-5 sm:px-3 sm:pt-3 sm:py-3  grid gap-4 rounded-md sm:flex w-full font-rubik">
         {/*Vote button on desktop**/}
         <div className="sm:flex hidden py-2 px-2 max-h-20 flex-row items-center gap-2 sm:gap-3 bg-veryLightGray rounded-md w-fit sm:flex-col">
           <img
