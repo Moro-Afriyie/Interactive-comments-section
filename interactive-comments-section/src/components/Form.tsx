@@ -48,7 +48,7 @@ const Form: React.FunctionComponent<IFormProps> = ({
         avatar: currentUser.avatar,
         tag: tag,
         reply: formComment || "",
-        date: "",
+        date: Date.now(),
         votes: 0,
       };
       dispatch(addNewReply(reply));
@@ -61,7 +61,7 @@ const Form: React.FunctionComponent<IFormProps> = ({
             replyCommentId: replyCommentId,
             tag: tag,
             comment: formComment || "",
-            date: "",
+            date: Date.now(),
           })
         );
       } else if (tag === "main") {
@@ -70,7 +70,7 @@ const Form: React.FunctionComponent<IFormProps> = ({
             mainCommentId: mainCommentId || "",
             tag: tag,
             comment: formComment || "",
-            date: "",
+            date: Date.now(),
           })
         );
       }
@@ -83,7 +83,7 @@ const Form: React.FunctionComponent<IFormProps> = ({
         avatar: currentUser.avatar,
         mainComment: formComment || "",
         replies: [],
-        date: "",
+        date: Date.now(),
         votes: 0,
       };
       dispatch(addNewComment(newComment));

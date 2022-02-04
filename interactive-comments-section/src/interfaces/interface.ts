@@ -5,7 +5,7 @@ export interface ReplyComment {
   avatar: string;
   tag: string;
   reply: string;
-  date: string;
+  date: string | number;
   votes: number;
 }
 
@@ -16,7 +16,7 @@ export interface Comment {
   avatar: string;
   mainComment: string;
   replies: ReplyComment[];
-  date: string;
+  date: string | number;
   votes: number;
 }
 
@@ -30,7 +30,7 @@ export interface UpdateComment {
   replyCommentId?: string;
   tag: string;
   comment: string;
-  date: string;
+  date: string | number;
 }
 
 export interface DeleteComment {

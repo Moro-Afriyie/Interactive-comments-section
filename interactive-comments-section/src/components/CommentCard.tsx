@@ -18,7 +18,7 @@ interface ICommentProps {
   tag: string;
   avatar: string;
   comment: string;
-  date: string;
+  date: string | number;
   votes: number;
   replyCommentId?: string;
 }
@@ -126,10 +126,15 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
                 you
               </p>
             )}
-            <p className="text-grayishBlue lowercase">{date}</p>
-            {/* <p className="text-grayishBlue">
-              <TimeAgo date={new Date(date)} />
-            </p> */}
+            {typeof date === "string" ? (
+              <p className="text-grayishBlue lowercase">{date}</p>
+            ) : (
+              <TimeAgo
+                date={new Date(date)}
+                className="text-grayishBlue lowercase"
+              />
+            )}
+
             {/**Reply , edit and delete buttons for desktop*/}
             {currentUser.userName === userName ? (
               <div className="sm:flex  hidden items-center  px-2 gap-8 cursor-pointer h-8 sm:ml-auto">
