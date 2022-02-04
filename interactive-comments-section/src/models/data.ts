@@ -11,7 +11,7 @@ export const data: Comment[] = [
     avatar: amyrobson,
     tag: "main",
     mainComment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
+      "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
     replies: [],
     date: "1 month ago",
     votes: 12,
@@ -22,7 +22,7 @@ export const data: Comment[] = [
     avatar: maxblagun,
     tag: "main",
     mainComment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
+      "Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React, as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
     replies: [
       {
         mainCommentId: "78460d4c742945e8a7dad4f284ef3694",
@@ -31,7 +31,7 @@ export const data: Comment[] = [
         userName: "ramsesmiron",
         avatar: ramsesmiron,
         reply:
-          "@maxblagun Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
+          "@maxblagun if you're still new, I'd recommend focusing on the fundamentals of HTML,CSS and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
         date: "1 week ago",
         votes: 4,
       },
@@ -42,7 +42,7 @@ export const data: Comment[] = [
         avatar: juliusomo,
         tag: "reply",
         reply:
-          "@ramsesmiron Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse obcaecati ipsum repellendus nam non possimus, distinctio vero iure sunt et quae dolorem, error harum similique nihil neque consequatur culpa expedita?",
+          "@ramsesmiron I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.",
         date: "2 days ago",
         votes: 2,
       },
