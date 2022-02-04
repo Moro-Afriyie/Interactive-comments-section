@@ -6,7 +6,7 @@ import edit from "../assets/icon-edit.svg";
 import deleteIcon from "../assets/icon-delete.svg";
 import Form from "./Form";
 import Modal from "./Modal";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { IRootReducerState } from "../store/reducers/rootReducer";
 import { useState } from "react";
 import TimeAgo from "react-timeago";
@@ -40,6 +40,7 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
   const currentUser = useSelector(
     (state: IRootReducerState) => state.currentUser
   );
+  const dispatch = useDispatch();
 
   const handleFormDisplay = (showForm: boolean, formType: string) => {
     setShowForm(showForm);
@@ -67,9 +68,19 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
       <div className="bg-white  shadow-sm p-3 grid gap-4 rounded-md sm:flex w-full font-rubik">
         {/*Vote button on desktop**/}
         <div className="sm:flex hidden py-2 px-2 max-h-20 flex-row items-center gap-3 bg-veryLightGray rounded-md w-fit sm:flex-col">
-          <img src={plus} alt="plus icon" className="cursor-pointer" />
+          <img
+            src={plus}
+            alt="plus icon"
+            className="cursor-pointer"
+            onClick={increaseVotes}
+          />
           <p className="text-moderateBlue text-sm font-bold">{votes}</p>
-          <img src={minus} alt="minus icon" className="cursor-pointer" />
+          <img
+            src={minus}
+            alt="minus icon"
+            className="cursor-pointer"
+            onClick={decreaseVotes}
+          />
         </div>
         {/*end vote button on desktop**/}
         <div className="flex flex-col gap-3 flex-1">
@@ -163,9 +174,19 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
         </div>
         <div className="flex items-center sm:hidden">
           <div className="py-1 px-2 flex  flex-row items-center gap-3 bg-veryLightGray rounded-md w-fit sm:flex-col">
-            <img src={plus} alt="plus icon" className="cursor-pointer" />
-            <p className="text-moderateBlue text-sm font-bold">12</p>
-            <img src={minus} alt="minus icon" className="cursor-pointer" />
+            <img
+              src={plus}
+              alt="plus icon"
+              className="cursor-pointer"
+              onClick={increaseVotes}
+            />
+            <p className="text-moderateBlue text-sm font-bold">{votes}</p>
+            <img
+              src={minus}
+              alt="minus icon"
+              className="cursor-pointer"
+              onClick={decreaseVotes}
+            />
           </div>
           {/**Reply , edit and delete buttons for mobile */}
           {currentUser.userName === userName ? (
