@@ -1,7 +1,6 @@
 # Frontend Mentor - Interactive comments section solution
 
-This is a solution to the [Interactive comments section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
-
+This is a solution to the [Interactive comments section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -12,6 +11,7 @@ This is a solution to the [Interactive comments section challenge on Frontend Me
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Useful resources](#useful-resources)
+- [Getting Started](#Getting Started)
 - [Author](#author)
 
 ## Overview
@@ -50,6 +50,16 @@ Users should be able to:
 - [React With TypeScript Best Practices](https://www.sitepoint.com/react-with-typescript-best-practices/) - This is an amazing article which helped me finally understand using react and typeScript. I'd recommend it to anyone still learning this concept.
 - [React with TypeScript cheatsheet](https://github.com/typescript-cheatsheets/react) - This helped me for using react and typescript. I really liked this pattern and will use it going forward.
 - [Tailwind CSS Documentation](https://tailwindcss.com/) - This helped me a lot using tailwind css. A very good documentation
+
+## Getting Started
+
+    $ git clone https://github.com/Moro-Afriyie/interview-assignment.git or you can download the zip file
+
+    $ cd interactive-comments-section
+
+    $ npm install
+
+    $ npm run start
 
 ## Author
 
