@@ -53,7 +53,7 @@ Users should be able to:
 
 ## Getting Started
 
-    $ git clone https://github.com/Moro-Afriyie/interview-assignment.git or you can download the zip file
+    $ git clone https://github.com/Moro-Afriyie/Interactive-comments-section.git or you can download the zip file
 
     $ cd interactive-comments-section
 
