@@ -191,7 +191,7 @@ const CommentCard: React.FunctionComponent<ICommentProps> = ({
                 />
               ))
             ) : (
-              <p className="text-grayishBlue">
+              <p className="text-grayishBlue break-words">
                 <span className="text-moderateBlue font-medium">
                   {comment.match(/^@\w+/gm) !== null
                     ? comment.match(/^@\w+/gm)?.[0]
