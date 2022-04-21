@@ -22,7 +22,7 @@ function App() {
   // };
 
   return (
-    <main className="min-h-screen relative items-center bg-veryLightGray flex justify-center pt-3 pb-5 ">
+    <main className="min-h-screen relative items-center bg-veryLightGray flex justify-center pt-12 pb-8 ">
       <div className="max-w-[45rem] min-h-1/2 w-full flex justify-center flex-col gap-5">
         {comments.map((comment) => (
           <div className="w-full" key={comment.commentId}>
